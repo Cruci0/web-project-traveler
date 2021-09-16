@@ -68,7 +68,7 @@
                     </c:when>
                     <c:otherwise>
                     <li class=" ">
-                       <a href="home.action">
+                       <a href="/traveler/account/logout.action">
                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                            <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Logout</span>
                            <span class="pcoded-mcaret"></span>

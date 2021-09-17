@@ -3,27 +3,28 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+
 <nav class="pcoded-navbar">
 	<div class="sidebar_toggle">
 		<a href="#"><i class="icon-close icons"></i></a>
 	</div>
 	<div class="pcoded-inner-navbar main-menu">
 		<ul class="pcoded-item pcoded-left-item">
-			<div class="pcoded-navigatio-lavel"
-				data-i18n="nav.category.navigation">Board</div>
-			<li class="active"><a href="index.html"> <span
-					class="pcoded-micon"><i class="ti-home"></i><b>D</b></span> <span
-					class="pcoded-mtext" data-i18n="nav.dash.main">게시판</span> <span
-					class="pcoded-mcaret"></span>
-			</a></li>
+			<div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Board</div>
+			<li>
+				<a href="/traveler/board/list">
+					<span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+					<span class="pcoded-mtext" data-i18n="nav.dash.main">게시판</span>
+					<span class="pcoded-mcaret"></span>
+				</a>
+			</li>
 		</ul>
 		<ul class="pcoded-item pcoded-left-item">
-			<div class="pcoded-navigatio-lavel"
-				data-i18n="nav.category.navigation">Search Flight</div>
-			<li><a href="bs-basic-table.html"> <span
-					class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span> <span
-					class="pcoded-mtext" data-i18n="nav.form-components.main">항공기
-						조회</span> <span class="pcoded-mcaret"></span>
+			<div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Search Flight</div>
+			<li><a href="bs-basic-table.html">
+				<span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+				<span class="pcoded-mtext" data-i18n="nav.form-components.main">항공기 조회</span>
+				<span class="pcoded-mcaret"></span>
 			</a></li>
 
 		</ul>

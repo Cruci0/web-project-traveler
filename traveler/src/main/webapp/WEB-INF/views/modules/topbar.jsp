@@ -10,8 +10,8 @@
 				class="ti-menu"></i>
 			</a> <a class="mobile-search morphsearch-search" href="#"> <i
 				class="ti-search"></i>
-			</a> <a href="home.action"> <img class="img-fluid"
-				src="resources/images/logo.png" alt="Theme-Logo" />
+			</a> <a href="/traveler/home.action"> <img class="img-fluid"
+				src="/traveler/resources/images/logo.png" alt="Theme-Logo" />
 			</a> <a class="mobile-options"> <i class="ti-more"></i>
 			</a>
 		</div>

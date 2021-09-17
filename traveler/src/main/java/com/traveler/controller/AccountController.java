@@ -1,10 +1,13 @@
 package com.traveler.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -72,6 +75,18 @@ public class AccountController {
 		session.removeAttribute("loginuser");
 		
 		return "redirect:/home.action";
+	}
+	
+	@GetMapping(path = {"/list.action"})
+	public String accountList(HttpSession session, Model model) {
+		
+//		// 데이터 조회
+//		List<MemberVO> members = boardService.findAll();
+//
+//		// View에서 사용할 수 있도록 Model 타입의 전달인자에 저장 -> Request 객체에 저장
+//		model.addAttribute("boards", boards);
+		
+		return "account/list";
 	}
 	
 }

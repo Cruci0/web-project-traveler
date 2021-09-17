@@ -70,6 +70,16 @@
                                     <input type="password" name="passwd" class="form-control" placeholder="비밀번호">
                                     <span class="md-line"></span>
                                 </div>
+                                <div class="row m-t-25 text-left">
+                                    <div class="col-sm-7 col-xs-12">
+                                        <div class="checkbox-fade fade-in-primary">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-xs-12 forgot-phone text-right">
+                                        <a href="/traveler/account/register.action" class="text-right f-w-600 text-inverse"> 아직 계정이 없나요?</a>
+                                    </div>
+                                </div>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
                                         <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">로그인</button>
@@ -84,7 +94,6 @@
                                         <img src="/traveler/resources/images/auth/Logo-small-bottom.png" alt="small-logo.png">
                                     </div>
                                 </div>
-
                             </div>
                         </form>
                         <!-- end of form -->

@@ -80,11 +80,11 @@ public class AccountController {
 	@GetMapping(path = {"/list.action"})
 	public String accountList(HttpSession session, Model model) {
 		
-//		// 데이터 조회
-//		List<MemberVO> members = boardService.findAll();
-//
-//		// View에서 사용할 수 있도록 Model 타입의 전달인자에 저장 -> Request 객체에 저장
-//		model.addAttribute("boards", boards);
+		// 데이터 조회
+		List<MemberVO> members = authService.findAll();
+
+		// View에서 사용할 수 있도록 Model 타입의 전달인자에 저장 -> Request 객체에 저장
+		model.addAttribute("members", members);
 		
 		return "account/list";
 	}

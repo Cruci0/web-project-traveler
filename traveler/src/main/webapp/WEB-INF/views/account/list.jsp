@@ -5,7 +5,7 @@
 <html lang="ko">
 
 <head>
-	<title>Account List</title>
+	<title>Member List</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -93,9 +93,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <c:forEach var="member" items="${ member }">
+                                    <c:forEach var="member" items="${ members }">
                                         <tr>
-                                            <td>${ member.Memberid }</td>
+                                            <td>${ member.memberID }</td>
                                             <td>${ member.email }</td>
                                             <td>${ member.usertype }</td>
                                             <td>${ member.active }</td>

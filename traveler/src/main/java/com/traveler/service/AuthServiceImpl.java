@@ -1,16 +1,29 @@
 package com.traveler.service;
 
+import java.util.List;
+
 import com.traveler.common.Util;
+import com.traveler.dao.ManagementDao;
 import com.traveler.dao.MemberDao;
-import com.traveler.dao.MemberDaoImpl;
+import com.traveler.mapper.ManagementMapper;
 import com.traveler.vo.MemberVO;
+
+import lombok.Setter;
 
 public class AuthServiceImpl implements AuthService {
 	
+	@Setter
 	private MemberDao memberDao;
-	public void setMemberDao(MemberDao memberDao) {	// 의존 객체 주입을 위한 세터
-		this.memberDao = memberDao;
-	}
+	
+	@Setter
+	private ManagementMapper managementMapper;
+	
+	@Setter
+	private ManagementDao managementDao;
+	
+//	public void setMemberDao(MemberDao memberDao) {	// 의존 객체 주입을 위한 세터
+//		this.memberDao = memberDao;
+//	}
 
 	@Override
 	public void registerMember(MemberVO member) {
@@ -34,5 +47,13 @@ public class AuthServiceImpl implements AuthService {
 		
 		return member;
 		
+	}
+
+	@Override
+	public List<MemberVO> findAll() {
+		
+		List<MemberVO> members = managementMapper.selectAll();
+		
+		return members;
 	}
 }

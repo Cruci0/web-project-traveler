@@ -8,7 +8,7 @@
 <mapper namespace="com.traveler.mapper.ManagementMapper">
 
 	<select id="selectAll" resultType="MemberVO">
-	SELECT Memebrid, email, usertype, active, regdate
+	SELECT Memberid, email, usertype, active, regdate
 	FROM member 
 	ORDER BY usertype DESC
 	</select>

@@ -15,11 +15,6 @@ import com.traveler.vo.MemberVO;
 
 public class MemberDaoImpl implements MemberDao {
 	
-	private DataSource dataSource;
-	public void setDataSource(DataSource dataSource) {	// 의존 객체 주입 통로
-		this.dataSource = dataSource;
-	}
-	
 	private JdbcTemplate jdbcTemplate;
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {	// 의존 객체 주입 통로 (스프링 IoC에서 DI를 통해 jdbcTemplate에 인스턴스 참조 저장)
 		this.jdbcTemplate = jdbcTemplate;

@@ -99,7 +99,7 @@
                                             <td>${ member.email }</td>
                                             <td>${ member.usertype }</td>
                                             <td>${ member.active }</td>
-                                            <td>${ member.regdate }</td>
+                                            <td>${ member.regDate }</td>
                                         </tr>
                                     </c:forEach>
                                     </tbody>

@@ -18,8 +18,8 @@ public class AuthServiceImpl implements AuthService {
 	@Setter
 	private ManagementMapper managementMapper;
 	
-	@Setter
-	private ManagementDao managementDao;
+//	@Setter
+//	private ManagementDao managementDao;
 	
 //	public void setMemberDao(MemberDao memberDao) {	// 의존 객체 주입을 위한 세터
 //		this.memberDao = memberDao;

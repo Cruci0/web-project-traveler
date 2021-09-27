@@ -21,7 +21,14 @@ public class SchedulesServiceImpl implements SchedulesService {
 	public void initData(String csvPath) {
 		// csv파일을 읽어서 DB에 WinningNumbers 리스트 저장
 		List<FlightSchedules> list = readFlightSchedulesFromCsv(csvPath);
-
+		
+		// 테이블 제거
+		schedulesDao.dropFlightSchedules();
+		
+		//테이블 생성
+		schedulesDao.createFlightSchedules();
+		
+		//테이블 안에 데이터 저장
 		schedulesDao.insertFlightSchedules(list);
 		
 	}

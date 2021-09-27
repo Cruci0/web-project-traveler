@@ -36,19 +36,18 @@ public class SchedulesDaoImpl implements SchedulesDao {
 			
 			// 2. 연결 객체 만들기
 			conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/traveler", 
+					"jdbc:mysql://localhost:3306/flight_schedules", 
 					"kdigital", "mysql");
 			
-			String sql = "CREATE TABLE FLIGHT_SCHEDULES "
-					+ "( "
-					+ "   DAY CHAR(3) NOT NULL, "
-					+ "   FLIGHT VARCHAR(20) NOT NULL, "
-					+ "   TIME VARCHAR(10) NOT NULL, "
-					+ "   DATE_FROM DATE NOT NULL, "
-					+ "   DATE_TO DATE NOT NULL, "
-					+ "   AIRLINE VARCHAR(100) NOT NULL, "
-					+ "   DESTINATION VARCHAR(20) NOT NULL "
-					+ ") ";
+			String sql = "CREATE TABLE FLIGHT_SCHEDULES ( " +
+						 "   DAY CHAR(3) NOT NULL, " +
+						 "   FLIGHT VARCHAR(20) NOT NULL, " +
+						 "   TIME VARCHAR(10) NOT NULL, " +
+						 "   DATE_FROM DATE NOT NULL, " +
+						 "   DATE_TO DATE NOT NULL, " +
+						 "   AIRLINE VARCHAR(100) NOT NULL, " +
+						 "   DESTINATION VARCHAR(20) NOT NULL " +
+						 ")";
 			pstmt = conn.prepareStatement(sql);
 			
 			// 4. 명령 실행

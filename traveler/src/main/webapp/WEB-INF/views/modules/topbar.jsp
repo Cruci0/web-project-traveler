@@ -27,19 +27,13 @@
 				<li><a href="#!" onclick="javascript:toggleFullScreen()"> <i
 						class="ti-fullscreen"></i>
 				</a></li>
-				<%-- <div class="links">
-					<c:choose>
-						<c:when test="${ loginuser == null }">
-							<a href="/spring-demoweb/account/login.action">로그인</a>
-							<a href="/spring-demoweb/account/register.action">회원가입</a>
-						</c:when>
-						<c:otherwise>
-                			${ loginuser.Memberid }님 환영합니다.
-                			<a href="/spring-demoweb/account/logout.action">로그아웃</a>
-						</c:otherwise>
-					</c:choose>
-				</div> --%>
 			</ul>
+			 <ul class="nav-right">
+			 	<li class="user-profile header-notification">
+			 		<p style="font-size:12pt;">${ loginuser.memberID } 님 환영합니다.</p>
+			 	</li>
+			 </ul>
 		</div>
 	</div>
+	
 </nav>

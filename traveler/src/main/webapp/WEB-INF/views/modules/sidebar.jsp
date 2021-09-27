@@ -11,26 +11,20 @@
 	<div class="pcoded-inner-navbar main-menu">
 		<ul class="pcoded-item pcoded-left-item">
 			<div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Board</div>
-			<%-- <c:choose>
-			<c:when test="${ loginuser == null }">
 			<li>
-				<a href="/traveler/board/list">
-					<span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
-					<span class="pcoded-mtext" data-i18n="nav.dash.main">게시판</span>
-					<span class="pcoded-mcaret"></span>
-				</a>
-			</li>
+			<c:choose>
+			<c:when test="${ loginuser == null}">
+				<a href="/traveler/account/login.action">
 			</c:when>
-			<c:otherwise> --%>
-			<li>
+			<c:otherwise>
 				<a href="/traveler/board/list">
+			</c:otherwise>
+			</c:choose>
 					<span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
 					<span class="pcoded-mtext" data-i18n="nav.dash.main">게시판</span>
 					<span class="pcoded-mcaret"></span>
 				</a>
 			</li>
-			<%-- </c:otherwise>
-			</c:choose> --%>
 		</ul>
 		<ul class="pcoded-item pcoded-left-item">
 			<div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Search Flight</div>
@@ -96,7 +90,7 @@
 		</ul>
 		
 		<c:choose>
-		<c:when test="${ loginuser != null}">
+		<c:when test="${ loginuser.usertype == 'admin'}">
 		<ul class="pcoded-item pcoded-left-item">
 			<div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Admin</div>
 				<li class=" "><a href="/traveler/account/list.action">
@@ -111,5 +105,10 @@
 				</a></li>
 		</ul>
 		</c:when>
+		<c:otherwise>
+		
+		</c:otherwise>
 		</c:choose>
+		
+
 </nav>

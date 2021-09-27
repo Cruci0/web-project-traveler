@@ -6,10 +6,10 @@ import com.traveler.vo.FlightSchedules;
 
 public interface SchedulesDao {
 	
-	void insertFlightSchedules(List<FlightSchedules> schedules);
-
 	void dropFlightSchedules();
-
+	
 	void createFlightSchedules();
 	
+	void insertFlightSchedules(List<FlightSchedules> schedules);
+
 }

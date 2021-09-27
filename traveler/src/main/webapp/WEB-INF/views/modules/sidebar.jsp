@@ -20,7 +20,7 @@
 				<a href="/traveler/board/list">
 			</c:otherwise>
 			</c:choose>
-					<span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+					<span class="pcoded-micon"><i class="ti-view-list-alt"></i><b>D</b></span>
 					<span class="pcoded-mtext" data-i18n="nav.dash.main">게시판</span>
 					<span class="pcoded-mcaret"></span>
 				</a>
@@ -29,7 +29,7 @@
 		<ul class="pcoded-item pcoded-left-item">
 			<div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Search Flight</div>
 			<li><a href="bs-basic-table.html">
-				<span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+				<span class="pcoded-micon"><i class="ti-ticket"></i><b>FC</b></span>
 				<span class="pcoded-mtext" data-i18n="nav.form-components.main">항공기 조회</span>
 				<span class="pcoded-mcaret"></span>
 			</a></li>
@@ -37,7 +37,7 @@
 		<ul class="pcoded-item pcoded-left-item">
 			<div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">View Charts</div>
 			<li><a href="chart.html">
-				<span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+				<span class="pcoded-micon"><i class="ti-pie-chart"></i><b>FC</b></span>
 				<span class="pcoded-mtext" data-i18n="nav.form-components.main">데이터 시각화</span>
 				<span class="pcoded-mcaret"></span>
 			</a></li>
@@ -46,7 +46,7 @@
 			<div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">My Account</div>
 			<li class="pcoded-hasmenu">
                 <a href="javascript:void(0)">
-                    <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                    <span class="pcoded-micon"><i class="ti-user"></i></span>
                     <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">계정관리</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
@@ -93,17 +93,27 @@
 		<c:when test="${ loginuser.usertype == 'admin'}">
 		<ul class="pcoded-item pcoded-left-item">
 			<div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Admin</div>
-				<li class=" "><a href="/traveler/account/list.action">
-                           <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                           <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">멤버 리스트</span>
-                           <span class="pcoded-mcaret"></span>
-            	</a></li>
-				<li><a href="/traveler/schedules/init-data.action">
-					<span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-					<span class="pcoded-mtext" data-i18n="nav.form-components.main">데이터 삽입</span>
-					<span class="pcoded-mcaret"></span>
-				</a></li>
-		</ul>
+			<li class="pcoded-hasmenu">
+                <a href="javascript:void(0)">
+                    <span class="pcoded-micon"><i class="ti-settings"></i></span>
+                    <span class="pcoded-mtext"  data-i18n="nav.basic-components.main">관리자 페이지</span>
+                    <span class="pcoded-mcaret"></span>
+                </a>
+                <ul class="pcoded-submenu">
+                    <li class=" ">
+                        <a href="/traveler/account/list.action">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">멤버 리스트</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="/traveler/schedules/init-data.action">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">데이터 초기화</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
 		</c:when>
 		<c:otherwise>
 		

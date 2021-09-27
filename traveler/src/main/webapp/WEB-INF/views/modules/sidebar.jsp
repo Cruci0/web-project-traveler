@@ -11,6 +11,8 @@
 	<div class="pcoded-inner-navbar main-menu">
 		<ul class="pcoded-item pcoded-left-item">
 			<div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Board</div>
+			<%-- <c:choose>
+			<c:when test="${ loginuser == null }">
 			<li>
 				<a href="/traveler/board/list">
 					<span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
@@ -18,6 +20,17 @@
 					<span class="pcoded-mcaret"></span>
 				</a>
 			</li>
+			</c:when>
+			<c:otherwise> --%>
+			<li>
+				<a href="/traveler/board/list">
+					<span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+					<span class="pcoded-mtext" data-i18n="nav.dash.main">게시판</span>
+					<span class="pcoded-mcaret"></span>
+				</a>
+			</li>
+			<%-- </c:otherwise>
+			</c:choose> --%>
 		</ul>
 		<ul class="pcoded-item pcoded-left-item">
 			<div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Search Flight</div>
@@ -26,23 +39,17 @@
 				<span class="pcoded-mtext" data-i18n="nav.form-components.main">항공기 조회</span>
 				<span class="pcoded-mcaret"></span>
 			</a></li>
-
 		</ul>
 		<ul class="pcoded-item pcoded-left-item">
-			<div class="pcoded-navigatio-lavel"
-				data-i18n="nav.category.navigation">View Charts</div>
-			<li><a href="chart.html"> <span class="pcoded-micon"><i
-						class="ti-layers"></i><b>FC</b></span> <span class="pcoded-mtext"
-					data-i18n="nav.form-components.main">데이터 시각화</span> <span
-					class="pcoded-mcaret"></span>
+			<div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">View Charts</div>
+			<li><a href="chart.html">
+				<span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+				<span class="pcoded-mtext" data-i18n="nav.form-components.main">데이터 시각화</span>
+				<span class="pcoded-mcaret"></span>
 			</a></li>
-			<li><a href="/traveler/schedules/init-data.action"> <span
-					class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span> <span
-					class="pcoded-mtext" data-i18n="nav.form-components.main">데이터
-						삽입</span> <span class="pcoded-mcaret"></span>
-			</a></li>
-			<div class="pcoded-navigatio-lavel"
-				data-i18n="nav.category.navigation">My Account</div>
+		</ul>
+		<ul class="pcoded-item pcoded-left-item">
+			<div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">My Account</div>
 			<li class="pcoded-hasmenu">
                 <a href="javascript:void(0)">
                     <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
@@ -55,14 +62,14 @@
                     <li class=" ">
                         <a href="/traveler/account/login.action">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Login</span>
+                            <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">로그인</span>
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>
                     <li class=" ">
                         <a href="/traveler/account/register.action">
                             <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                            <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Register</span>
+                            <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">회원가입</span>
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>
@@ -71,14 +78,14 @@
                     <li class=" ">
                        <a href="/traveler/account/logout.action">
                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                           <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Logout</span>
+                           <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">로그아웃</span>
                            <span class="pcoded-mcaret"></span>
                        </a>
                    </li>
                    <li class=" ">
                        <a href="/traveler/account/list.action">
                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                           <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Member List</span>
+                           <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">마이페이지</span>
                            <span class="pcoded-mcaret"></span>
                        </a>
                    </li>
@@ -86,6 +93,23 @@
                    </c:choose>
                 </ul>
             </li>
-
 		</ul>
+		
+		<c:choose>
+		<c:when test="${ loginuser != null}">
+		<ul class="pcoded-item pcoded-left-item">
+			<div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Admin</div>
+				<li class=" "><a href="/traveler/account/list.action">
+                           <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                           <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">멤버 리스트</span>
+                           <span class="pcoded-mcaret"></span>
+            	</a></li>
+				<li><a href="/traveler/schedules/init-data.action">
+					<span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+					<span class="pcoded-mtext" data-i18n="nav.form-components.main">데이터 삽입</span>
+					<span class="pcoded-mcaret"></span>
+				</a></li>
+		</ul>
+		</c:when>
+		</c:choose>
 </nav>

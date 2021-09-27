@@ -55,5 +55,6 @@
 	</bean>
 	
 	<import resource="member-context.xml" />
-		
+	<import resource="board-context.xml" />
+	
 </beans>

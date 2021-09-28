@@ -12,6 +12,12 @@
 	FROM member 
 	ORDER BY usertype DESC
 	</select>
+	
+	<update id="updateMember" parameterType="MemberVO">
+	UPDATE member
+	SET email = #{ email }
+	WHERE Memberid = #{ memberID }
+	</update>
 
 	
 </mapper>

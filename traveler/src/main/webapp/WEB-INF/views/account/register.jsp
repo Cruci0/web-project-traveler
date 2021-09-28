@@ -92,8 +92,7 @@
 										class="md-line"></span>
 								</div>
 								<div class="input-group">
-									<input type="text" id="email" name="email" class="form-control"
-										placeholder="이메일"> <span class="md-line"></span>
+									<input type="text" id="email" name="email" class="form-control" placeholder="이메일"> <span class="md-line"></span>
 								</div>
 								<div class="input-group">
 									<input type="password" id="passwd" name="passwd" class="form-control" placeholder="비밀번호" onchange="check_pw()">

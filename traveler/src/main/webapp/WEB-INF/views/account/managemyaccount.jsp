@@ -5,7 +5,7 @@
 <html lang="ko">
 
 <head>
-    <title>My Account Page</title>
+    <title>Manage My Account Page</title>
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -99,12 +99,12 @@
                <div class="container-fluid">
                    <!-- Page Heading -->
                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                       <h1 class="h3 mb-0 text-gray-800">개인정보</h1>
+                       <h1 class="h3 mb-0 text-gray-800">개인정보수정</h1>
                    </div>
                    <!-- DataTales Example -->
                    <div class="card shadow mb-4">
 					 <div class="card-header py-3">
-					     <button id="edit-button" type="button" class="btn btn-success">개인정보수정</button>
+					     <a href="" class="btn btn-primary btn-sm" style="float:right">수정완료</a>
 					     <div style="clear:both"></div>
 					 </div>
 					 <div class="card-body">
@@ -117,7 +117,7 @@
 			                   	</tr>
 			                   	<tr>
 			                   		<th>이메일</th>
-			                   		<td>${ loginuser.email }</td>
+			                   		<td><input class="form-control" id='email' name='email' value='${ loginuser.email }'></td>
 			                   	</tr>
 			                   	<tr>
 			                   		<th>가입일자</th>
@@ -191,14 +191,15 @@
 
 <script>
 var $window = $(window);
-
 $(function() {
-	
-	$('#edit-button').on('click', function(event) {
-		location.href = "managemyaccount?memberID=${ loginuser.memberID }";
-	})
+	$('#update-button').on('click', function(event) {
+		
+		// 필요한 경우 입력 데이터 유효성 검사 수행
+		// Mform id="update-form"...> ... </form> 요소를 서버로 전송
+		$('#update-form').submit();
+		
+	});
 });
-
 </script>
 </body>
 

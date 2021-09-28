@@ -2,8 +2,8 @@
 $(document).ready(function() {
 
     lineChart();
-    areaChart();
-    donutChart();
+   // areaChart();
+   // donutChart();
 
     $(window).on('resize',function() {
         window.lineChart.redraw();
@@ -13,7 +13,7 @@ $(document).ready(function() {
 });
 
 /*Line chart*/
-function lineChart() {
+/*function lineChart() {
     window.lineChart = Morris.Line({
         element: 'line-example',
         data: [
@@ -33,9 +33,9 @@ function lineChart() {
         lineColors: ['#B4C1D7', '#FF9F55']
     });
 }
-
+*/
 /*Area chart*/
-function areaChart() {
+/*function areaChart() {
     window.areaChart = Morris.Area({
         element: 'area-example',
         data: [
@@ -54,10 +54,10 @@ function areaChart() {
         labels: ['Series A', 'Series B'],
         lineColors: ['#93EBDD', '#64DDBB']
     });
-}
+}*/
 
 /*Donut chart*/
-function donutChart() {
+/*function donutChart() {
     window.areaChart = Morris.Donut({
         element: 'donut-example',
         redraw: true,
@@ -68,7 +68,7 @@ function donutChart() {
         ],
         colors: ['#5FBEAA', '#34495E', '#FF9F55']
     });
-}
+}*/
 
 // Morris bar chart
 Morris.Bar({
@@ -118,7 +118,7 @@ Morris.Bar({
     resize: true
 });
 // Extra chart
-Morris.Area({
+/*Morris.Area({
     element: 'morris-extra-area',
     data: [{
             period: '2010',
@@ -172,10 +172,10 @@ Morris.Area({
     hideHover: 'auto'
 
 });
-
+*/
 /*Site visit Chart*/
 
-Morris.Area({
+/*Morris.Area({
     element: 'morris-site-visit',
     data: [{
         period: '2010',
@@ -227,4 +227,4 @@ Morris.Area({
     lineColors: ['#b4becb', '#01c0c8'],
     resize: true
 
-});
+});*/

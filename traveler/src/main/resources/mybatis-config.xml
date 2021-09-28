@@ -11,11 +11,13 @@
 	<typeAliases>
 		<typeAlias type="com.traveler.vo.MemberVO" alias="MemberVO" />
 		<typeAlias type="com.traveler.vo.BoardVO" alias="BoardVO" />
+		<typeAlias type="com.traveler.vo.FlightSchedules" alias="FlightSchedules" />
 	</typeAliases>
 
 	<mappers>
 		<mapper resource="com/traveler/mapper/ManagementMapper.xml" />
 		<mapper resource="com/traveler/mapper/BoardMapper.xml" />
+		<mapper resource="com/traveler/mapper/FlightsMapper.xml"/>
 	</mappers>
 
 </configuration>

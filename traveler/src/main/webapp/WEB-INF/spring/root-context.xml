@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	
+	<bean id="travelerService"
+		class="com.traveler.service.TravelerServiceImpl">
+		<property name="travelerDao" ref="travelerDao" />
+	</bean>
 	
 	
 	<bean id="schedulesService" class="com.traveler.service.SchedulesServiceImpl">
@@ -54,7 +59,9 @@
 		<constructor-arg ref="sqlSessionFactory" />
 	</bean>
 	
+<!-- 	<mybatis-spring:scan base-package="com.traveler.mapper" /> -->
+	
 	<import resource="member-context.xml" />
 	<import resource="board-context.xml" />
-	
+	<import resource="flights-context.xml" />
 </beans>

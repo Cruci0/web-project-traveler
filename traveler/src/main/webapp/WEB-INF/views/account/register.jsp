@@ -193,8 +193,8 @@
 
 						// 문자열의 형식을 분석하고 검증하는 도구 -> 정규 표현식( regular expression)
 						var re = /^[A-Za-z0-9]{6,12}$/;
-						var memberId = $('#Memberid').val();
-						if (!re.test(memberId)) {
+						var memberID = $('#Memberid').val();
+						if (!re.test(memberID)) {
 							alert('아이디 형식 오류 (6 ~ 12개의 영문자 또는 숫자)')
 							return;
 						}

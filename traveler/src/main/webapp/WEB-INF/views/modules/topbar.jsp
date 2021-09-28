@@ -20,7 +20,6 @@
 						<a href="javascript:void(0)"><i class="ti-menu"></i></a>
 					</div>
 				</li>
-
 				<li><a href="#!" onclick="javascript:toggleFullScreen()">
 				<i class="ti-fullscreen"></i>
 				</a></li>

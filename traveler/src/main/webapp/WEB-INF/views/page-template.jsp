@@ -34,7 +34,6 @@
                     <div class="frame"></div>
                 </div>
                 <div class="ring">
-
                     <div class="frame"></div>
                 </div>
                 <div class="ring">

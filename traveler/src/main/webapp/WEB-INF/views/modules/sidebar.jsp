@@ -13,7 +13,7 @@
 			<div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Board</div>
 			<li>
 			<c:choose>
-			<c:when test="${ loginuser == null}">
+			<c:when test="${ loginuser == null }">
 				<a href="/traveler/account/login.action">
 			</c:when>
 			<c:otherwise>
@@ -77,7 +77,7 @@
                        </a>
                    </li>
                    <li class=" ">
-                       <a href="/traveler/account/list.action">
+                       <a href="/traveler/account/mypage.action">
                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                            <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">마이페이지</span>
                            <span class="pcoded-mcaret"></span>

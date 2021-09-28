@@ -96,22 +96,20 @@
 										placeholder="이메일"> <span class="md-line"></span>
 								</div>
 								<div class="input-group">
-									<input type="password" id="passwd" name="passwd"
-										class="form-control" placeholder="비밀번호"> <span
-										class="md-line"></span>
+									<input type="password" id="passwd" name="passwd" class="form-control" placeholder="비밀번호" onchange="check_pw()">
+									<span class="md-line"></span>
 								</div>
 								<div class="input-group">
-									<input type="password" id="confirm" name="confirm"
-										class="form-control" placeholder="비밀번호 확인"> <span
-										class="md-line"></span>
+									<input type="password" id="confirm" name="confirm" class="form-control" placeholder="비밀번호 확인" onchange="check_pw()">
+									<span class="md-line"></span>
 								</div>
+								<span id="check"></span>
 								<div class="row m-t-30">
 									<div class="col-md-12">
-										<button id="register" type="button"
+										<button id="register" type="button" disabled="disabled"
 											class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">회원가입</button>
 									</div>
 								</div>
-								<hr />
 								<div class="row">
 									<div class="col-md-10">
 										<p class="text-inverse text-left m-b-0">환영합니다!</p>
@@ -183,36 +181,50 @@
 	<script type="text/javascript">
 		$(function() {
 			$('#register')
-					.on(
-							'click',
-							function(event) {
+				.on(
+					'click',
+					function(event) {
 
-								/* var memberID = $('#memberID').val();
-								if (memberID.length < 6 || memberID.length > 12) {
-									alert('아이디 형식 오류 (6 ~ 12개의 영문자 또는 숫자)');
-									return;
-								} */
+						/* var memberID = $('#memberID').val();
+						if (memberID.length < 6 || memberID.length > 12) {
+							alert('아이디 형식 오류 (6 ~ 12개의 영문자 또는 숫자)');
+							return;
+						} */
 
-								// 문자열의 형식을 분석하고 검증하는 도구 -> 정규 표현식( regular expression)
-								var re = /^[A-Za-z0-9]{6,12}$/;
-								var memberId = $('#Memberid').val();
-								if (!re.test(memberId)) {
-									alert('아이디 형식 오류 (6 ~ 12개의 영문자 또는 숫자)')
-									return;
-								}
-
-								re = /[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]$/i;
-								var email = $('#email').val();
-								if (!re.test(email)) {
-									alert('이메일 형식 오류');
-									return;
-								}
-
-								$('#registerform').submit(); // form을 서버로 전송
-
-							})
-
+						// 문자열의 형식을 분석하고 검증하는 도구 -> 정규 표현식( regular expression)
+						var re = /^[A-Za-z0-9]{6,12}$/;
+						var memberId = $('#Memberid').val();
+						if (!re.test(memberId)) {
+							alert('아이디 형식 오류 (6 ~ 12개의 영문자 또는 숫자)')
+							return;
+						}
+						
+						re = /[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]$/i;
+						var email = $('#email').val();
+						if (!re.test(email)) {
+							alert('이메일 형식 오류');
+							return;
+						}
+						
+						
+						$('#registerform').submit(); // form을 서버로 전송
+					})
 		});
+		function check_pw(){
+			
+			if(document.getElementById('passwd').value !='' && document.getElementById('confirm').value!=''){
+                if(document.getElementById('passwd').value==document.getElementById('confirm').value){
+                    document.getElementById('check').innerHTML='비밀번호가 일치합니다.'
+                    document.getElementById('check').style.color='blue';
+                    document.getElementById('register').disabled=false;
+                }
+                else{
+                    document.getElementById('check').innerHTML='비밀번호가 일치하지 않습니다.';
+                    document.getElementById('check').style.color='red';
+                    document.getElementById('register').disabled='disabled';
+                }
+            }
+		}
 	</script>
 	<!-- Required Jquery -->
 	<jsp:include page="/WEB-INF/views/modules/common-js.jsp" />

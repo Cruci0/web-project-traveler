@@ -89,4 +89,10 @@ public class AccountController {
 		return "account/list";
 	}
 	
+	@GetMapping(path = {"/mypage.action"})
+	public String showMypage() {
+		
+		return "account/mypage";
+	}
+	
 }

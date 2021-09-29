@@ -214,7 +214,14 @@
 									                                            <td>
 									                                            <c:choose>
 									                                            	<c:when test="${ not board.deleted }">
-									                                            	<a href="/traveler/board/list">${ board.title }</a>
+									                                            		<c:choose>
+										                                            	<c:when test="${ loginuser == null }">
+										                                            	<a href="/traveler/account/login.action">${ board.title }</a>
+										                                            	</c:when>
+									                                            		<c:otherwise>
+									                                            		<a href="detail?boardNo=${ board.boardNo }">${ board.title }</a>
+									                                            		</c:otherwise>
+									                                            		</c:choose>
 									                                            	</c:when>
 									                                            	<c:otherwise>
 									                                            	<span style="color:lightgray">${ board.title } [삭제된 글]</span>

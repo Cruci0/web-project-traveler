@@ -32,6 +32,8 @@ public class BoardController {
 
 		return "board/list"; // /WEB-INF/views/ + board/list + .jsp
 	}
+	
+	
 
 	@GetMapping(path = { "/write" })
 	public String showWriteForm() {

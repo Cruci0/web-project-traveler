@@ -214,7 +214,7 @@
 									                                            <td>
 									                                            <c:choose>
 									                                            	<c:when test="${ not board.deleted }">
-									                                            	<a href="detail?boardNo=${ board.boardNo }">${ board.title }</a>
+									                                            	<a href="/traveler/board/list">${ board.title }</a>
 									                                            	</c:when>
 									                                            	<c:otherwise>
 									                                            	<span style="color:lightgray">${ board.title } [삭제된 글]</span>

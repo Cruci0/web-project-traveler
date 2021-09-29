@@ -28,7 +28,15 @@
 		</ul>
 		<ul class="pcoded-item pcoded-left-item">
 			<div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Search Flight</div>
-			<li><a href="bs-basic-table.html">
+			<li>
+			<c:choose>
+			<c:when test="${ loginuser == null }">
+				<a href="/traveler/account/login.action">
+			</c:when>
+			<c:otherwise>
+				<a href="/traveler/traveler/search">
+			</c:otherwise>
+			</c:choose>
 				<span class="pcoded-micon"><i class="ti-ticket"></i><b>FC</b></span>
 				<span class="pcoded-mtext" data-i18n="nav.form-components.main">항공기 조회</span>
 				<span class="pcoded-mcaret"></span>
@@ -36,7 +44,15 @@
 		</ul>
 		<ul class="pcoded-item pcoded-left-item">
 			<div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">View Charts</div>
-			<li><a href="chart.html">
+			<li>
+			<c:choose>
+			<c:when test="${ loginuser == null }">
+				<a href="/traveler/account/login.action">
+			</c:when>
+			<c:otherwise>
+				<a href="/traveler/traveler/graph">
+			</c:otherwise>
+			</c:choose>
 				<span class="pcoded-micon"><i class="ti-pie-chart"></i><b>FC</b></span>
 				<span class="pcoded-mtext" data-i18n="nav.form-components.main">데이터 시각화</span>
 				<span class="pcoded-mcaret"></span>

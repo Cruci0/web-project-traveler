@@ -46,6 +46,16 @@ public class AuthServiceImpl implements AuthService {
 		MemberVO member = memberDao.selectMemberByIdAndPasswd(memberID, passwd);
 		
 		return member;
+	}
+	
+	@Override
+	public MemberVO findMemberById(String memberID) {
+		
+		
+		//MemberDao memberDao = new MemberDaoImpl();	//의존성 주입이 이뤄져서 이제 더 필요없음.
+		MemberVO member = managementMapper.selectMemberById(memberID);
+		
+		return member;
 		
 	}
 
@@ -55,5 +65,11 @@ public class AuthServiceImpl implements AuthService {
 		List<MemberVO> members = managementMapper.selectAll();
 		
 		return members;
+	}
+
+	@Override
+	public void updateMember(MemberVO member) {
+		managementMapper.updateMember(member);
+		
 	}
 }

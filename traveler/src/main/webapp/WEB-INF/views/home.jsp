@@ -20,6 +20,23 @@
       <meta name="keywords" content=" Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
       <meta name="author" content="CodedThemes">
       <jsp:include page="/WEB-INF/views/modules/common-css.jsp" />
+      <style>
+		table {
+		  font-family: arial, sans-serif;
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+		
+		td, th {
+		  border: 1px solid #dddddd;
+		  text-align: left;
+		  padding: 8px;
+		}
+		
+		tr:nth-child(even) {
+		  background-color: #F0FFFF;
+		}
+		</style>
   </head>
 
   <body>
@@ -79,321 +96,156 @@
                                     <div class="page-body">
                                         <div class="row">
                                             <!-- card1 start -->
-                                            <div class="col-md-6 col-xl-3">
-                                                <div class="card widget-card-1">
-                                                    <div class="card-block-small">
-                                                        <i class="icofont icofont-pie-chart bg-c-blue card1-icon"></i>
-                                                        <span class="text-c-blue f-w-600">회원 수</span>
-                                                        <h4>1</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- card1 end -->
-                                            <!-- card1 start -->
-                                            <div class="col-md-6 col-xl-3">
-                                                <div class="card widget-card-1">
-                                                    <div class="card-block-small">
-                                                        <i class="icofont icofont-ui-home bg-c-pink card1-icon"></i>
-                                                        <span class="text-c-pink f-w-600">누적 방문자 수</span>
-                                                        <h4>123,456</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- card1 end -->
-                                            <!-- card1 start -->
-                                            <div class="col-md-6 col-xl-3">
-                                                <div class="card widget-card-1">
-                                                    <div class="card-block-small">
-                                                        <i class="icofont icofont-warning-alt bg-c-green card1-icon"></i>
-                                                        <span class="text-c-green f-w-600">Fixed issue</span>
-                                                        <h4>45</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- card1 end -->
-                                            <!-- card1 start -->
-                                            <div class="col-md-6 col-xl-3">
-                                                <div class="card widget-card-1">
-                                                    <div class="card-block-small">
-                                                        <i class="icofont icofont-social-twitter bg-c-yellow card1-icon"></i>
-                                                        <span class="text-c-yellow f-w-600">Followers</span>
-                                                        <h4>+562</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- card1 end -->
-                                            <!-- Statestics Start -->
-                                            <div class="col-md-12 col-xl-8">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        <h5>Statestics</h5>
-                                                        <div class="card-header-left ">
-                                                        </div>
-                                                        <div class="card-header-right">
-                                                            <ul class="list-unstyled card-option">
-                                                                <li><i class="icofont icofont-simple-left "></i></li>
-                                                                <li><i class="icofont icofont-maximize full-card"></i></li>
-                                                                <li><i class="icofont icofont-minus minimize-card"></i></li>
-                                                                <li><i class="icofont icofont-refresh reload-card"></i></li>
-                                                                <li><i class="icofont icofont-error close-card"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <div id="statestics-chart" style="height:517px;"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
 
-                                            <div class="col-md-12 col-xl-4">
-                                                    <div class="card fb-card">
-                                                        <div class="card-header">
-                                                            <i class="icofont icofont-social-facebook"></i>
-                                                            <div class="d-inline-block">
-                                                                <h5>facebook</h5>
-                                                                <span>blog page timeline</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-block text-center">
-                                                            <div class="row">
-                                                                <div class="col-6 b-r-default">
-                                                                    <h2>23</h2>
-                                                                    <p class="text-muted">Active</p>
-                                                                </div>
-                                                                <div class="col-6">
-                                                                    <h2>23</h2>
-                                                                    <p class="text-muted">Comment</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card dribble-card">
-                                                        <div class="card-header">
-                                                            <i class="icofont icofont-social-dribbble"></i>
-                                                            <div class="d-inline-block">
-                                                                <h5>dribble</h5>
-                                                                <span>Product page analysis</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-block text-center">
-                                                            <div class="row">
-                                                                <div class="col-6 b-r-default">
-                                                                    <h2>23</h2>
-                                                                    <p class="text-muted">Live</p>
-                                                                </div>
-                                                                <div class="col-6">
-                                                                    <h2>23</h2>
-                                                                    <p class="text-muted">Message</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card twitter-card">
-                                                        <div class="card-header">
-                                                            <i class="icofont icofont-social-twitter"></i>
-                                                            <div class="d-inline-block">
-                                                                <h5>twitter</h5>
-                                                                <span>current new timeline</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-block text-center">
-                                                            <div class="row">
-                                                                <div class="col-6 b-r-default">
-                                                                    <h2>25</h2>
-                                                                    <p class="text-muted">new tweet</p>
-                                                                </div>
-                                                                <div class="col-6">
-                                                                    <h2>450+</h2>
-                                                                    <p class="text-muted">Follower</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                           
+                                            <!-- card1 end -->
+                                            <!-- card1 start -->
+                                            
+                                            <!-- card1 end -->
+                                            
+                                            <!-- card1 start -->
+                                            <span style="text-align:left; margin-top:10px; font-size:30px; color:green">추천 여행</span>
+
+												<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+												<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+												
+												<style type="text/css">
+												
+												.swiper-container {
+													height:420px;
+													border:5px solid silver;
+													border-radius:7px;
+													box-shadow:0 0 20px #ccc inset;
+												}
+												.swiper-slide {
+													text-align:center;
+													display:flex; /* 내용을 중앙정렬 하기위해 flex 사용 */
+													align-items:center; /* 위아래 기준 중앙정렬 */
+													justify-content:center; /* 좌우 기준 중앙정렬 */
+												}
+												.swiper-slide img {
+													box-shadow:0 0 5px #555;
+													max-width:100%; /* 이미지 최대너비를 제한, 슬라이드에 이미지가 여러개가 보여질때 필요 */
+													/* 이 예제에서 필요해서 설정했습니다. 상황에따라 다를 수 있습니다. */
+												}
+												
+												</style>
+												
+												<div class="swiper-container">
+													<div class="swiper-wrapper">
+														<div class="swiper-slide"><img src="resources/images/그림1.jpg"></div>
+														<div class="swiper-slide"><img src="resources/images/그림2.jpg"></div>
+														<div class="swiper-slide"><img src="resources/images/그림3.jpg"></div>
+														<div class="swiper-slide"><img src="resources/images/그림4.jpg"></div>
+														<div class="swiper-slide"><img src="resources/images/그림5.jpg"></div>
+														<div class="swiper-slide"><img src="resources/images/그림6.jpg"></div>
+														<div class="swiper-slide"><img src="resources/images/그림7.jpg"></div>
+														<div class="swiper-slide"><img src="resources/images/그림8.jpg"></div>
+													</div>
+												
+													<!-- 네비게이션 -->
+													<div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+													<div class="swiper-button-prev"></div><!-- 이전 버튼 -->
+												
+													<!-- 페이징 -->
+													<div class="swiper-pagination"></div>
+												</div>
+												
+												<script>
+												
+												new Swiper('.swiper-container', {
+												
+													slidesPerView : 4, // 동시에 보여줄 슬라이드 갯수
+													spaceBetween : 5, // 슬라이드간 간격
+													slidesPerGroup : 1, // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
+												
+													// 그룹수가 맞지 않을 경우 빈칸으로 메우기
+													// 3개가 나와야 되는데 1개만 있다면 2개는 빈칸으로 채워서 3개를 만듬
+													loopFillGroupWithBlank : true,
+												
+													loop : true, // 무한 반복
+												
+													pagination : { // 페이징
+														el : '.swiper-pagination',
+														clickable : true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
+													},
+													navigation : { // 네비게이션
+														nextEl : '.swiper-button-next', // 다음 버튼 클래스명
+														prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
+													},
+												});
+												
+												</script>
+                                            
+                                            <!-- card1 end -->
+                                            <!-- card1 start -->
+                                            
+									                                            
+									                <!-- Begin Page Content -->
+									                <div class="container-fluid">
+									
+									                    <!-- Page Heading -->
+									                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+									                        <h1 class="h3 mb-0 text-gray-800">게시판</h1>
+									                    </div>
+									
+														<!-- DataTales Example -->
+									                    <div class="card shadow mb-4">
+									                        <div class="card-header py-3">
+									                            <span class="m-0 font-weight-bold text-primary">글 목록</span>
+									                            
+									                            <div style="clear:both"></div>
+									                        </div>
+									                        <div class="card-body">
+									                            <div class="table-responsive">
+									                                <table class="table table-hover" id="dataTable">
+									                                    <thead>
+									                                        <tr>
+									                                            <th>글번호</th>
+									                                            <th>제목</th>
+									                                            <th>작성자</th>
+									                                            <th>작성일자</th>
+									                                            <th>조회수</th>
+									                                        </tr>
+									                                    </thead>
+									                                    <tbody>
+									                                    <c:forEach var="board" items="${ boards }">
+									                                        <tr>
+									                                            <td>${ board.boardNo }</td>
+									                                            <td>
+									                                            <c:choose>
+									                                            	<c:when test="${ not board.deleted }">
+									                                            	<a href="detail?boardNo=${ board.boardNo }">${ board.title }</a>
+									                                            	</c:when>
+									                                            	<c:otherwise>
+									                                            	<span style="color:lightgray">${ board.title } [삭제된 글]</span>
+									                                            	</c:otherwise>
+									                                            </c:choose>
+									                                            </td>
+									                                            <td>${ board.writer }</td>
+									                                            <td>${ board.regDate }</td>
+									                                            <td>${ board.readCount }</td>
+									                                        </tr>
+									                                    </c:forEach>
+									                                    </tbody>
+									                                </table>
+									                            </div>
+									                        </div>
+									                    </div>
+									
+									                
+									
+									                </div>
+																				                
+                                            
+                                            <!-- card1 end -->
+                                            
+                                            
+                                            <!-- Statestics Start -->
+
+                                            
                                             <!-- Email Sent End -->
                                             <!-- Data widget start -->
-                                            <div class="col-md-12 col-xl-6">
-                                                <div class="card project-task">
-                                                    <div class="card-header">
-                                                        <div class="card-header-left ">
-                                                            <h5>Time spent : project &amp; task</h5>
-                                                        </div>
-                                                        <div class="card-header-right">
-                                                            <ul class="list-unstyled card-option">
-                                                                <li><i class="icofont icofont-simple-left "></i></li>
-                                                                <li><i class="icofont icofont-maximize full-card"></i></li>
-                                                                <li><i class="icofont icofont-minus minimize-card"></i></li>
-                                                                <li><i class="icofont icofont-refresh reload-card"></i></li>
-                                                                <li><i class="icofont icofont-error close-card"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-block p-b-10">
-                                                        <div class="table-responsive">
-                                                            <table class="table table-hover">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>Project & Task</th>
-                                                                        <th>Time Spents</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="task-contain">
-                                                                                <h6 class="bg-c-blue d-inline-block text-center">U</h6>
-                                                                                <p class="d-inline-block m-l-20">UI Design</p>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <p class="d-inline-block m-r-20">4 : 36</p>
-                                                                            <div class="progress d-inline-block">
-                                                                                <div class="progress-bar bg-c-blue" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:80%">
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="task-contain">
-                                                                                <h6 class="bg-c-pink d-inline-block text-center">R</h6>
-                                                                                <p class="d-inline-block m-l-20">Redesign Android App</p>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <p class="d-inline-block m-r-20">4 : 36</p>
-                                                                            <div class="progress d-inline-block">
-                                                                                <div class="progress-bar bg-c-pink" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:60%">
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="task-contain">
-                                                                                <h6 class="bg-c-yellow d-inline-block text-center">L</h6>
-                                                                                <p class="d-inline-block m-l-20">Logo Design</p>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <p class="d-inline-block m-r-20">4 : 36</p>
-                                                                            <div class="progress d-inline-block">
-                                                                                <div class="progress-bar bg-c-yellow" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="task-contain">
-                                                                                <h6 class="bg-c-green d-inline-block text-center">A</h6>
-                                                                                <p class="d-inline-block m-l-20">Appestia landing Page</p>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <p class="d-inline-block m-r-20">4 : 36</p>
-                                                                            <div class="progress d-inline-block">
-                                                                                <div class="progress-bar bg-c-green" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="task-contain">
-                                                                                <h6 class="bg-c-blue d-inline-block text-center">L</h6>
-                                                                                <p class="d-inline-block m-l-20">Logo Design</p>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>
-                                                                            <p class="d-inline-block m-r-20">4 : 36</p>
-                                                                            <div class="progress d-inline-block">
-                                                                                <div class="progress-bar bg-c-blue" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:50%">
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 col-xl-6">
-                                                <div class="card add-task-card">
-                                                    <div class="card-header">
-                                                        <div class="card-header-left">
-                                                            <h5>To do list</h5>
-                                                        </div>
-                                                        <div class="card-header-right">
-                                                            <button class="btn btn-card btn-primary">Add task </button>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <div class="to-do-list">
-                                                            <div class="checkbox-fade fade-in-primary d-block">
-                                                                <label class="check-task d-block">
-                                                                    <input type="checkbox" value="">
-                                                                    <span class="cr">
-                                                                        <i class="cr-icon icofont icofont-ui-check txt-default"></i>
-                                                                    </span>
-                                                                    <span><h6>Schedule Meeting with Compnes <span class="label bg-c-green m-l-10 f-10">2 week</span></h6></span>
-                                                                    <div class="task-card-img m-l-40">
-                                                                        <a href="#!"><img src="resources/images/avatar-2.jpg" data-toggle="tooltip" title="Lary Doe" alt="" class="img-40"></a>
-                                                                        <a href="#!"><img src="resources/images/avatar-3.jpg" data-toggle="tooltip" title="Alia" alt="" class="img-40 m-l-10"></a>
-                                                                    </div>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="to-do-list">
-                                                            <div class="checkbox-fade fade-in-primary d-block">
-                                                                <label class="check-task d-block">
-                                                                    <input type="checkbox" value="">
-                                                                    <span class="cr">
-                                                                        <i class="cr-icon icofont icofont-ui-check txt-default"></i>
-                                                                    </span>
-                                                                    <span><h6>Meeting With HOD's and borad</h6><p class="text-muted m-l-40">23 january 2003</p></span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="to-do-list">
-                                                            <div class="checkbox-fade fade-in-primary d-block">
-                                                                <label class="check-task d-block">
-                                                                    <input type="checkbox" value="">
-                                                                    <span class="cr">
-                                                                        <i class="cr-icon icofont icofont-ui-check txt-default"></i>
-                                                                    </span>
-                                                                    <span><h6>Create template, admin with responsive<span class="label bg-c-pink m-l-10">2 week</span></h6></span>
-                                                                    <div class="task-card-img m-l-40">
-                                                                        <a href="#!"><img src="resources/images/avatar-2.jpg" data-toggle="tooltip" title="Alia" alt="" class="img-40"></a>
-                                                                        <a href="#!"><img src="resources/images/avatar-3.jpg" data-toggle="tooltip" title="Suzen" alt="" class="img-40 m-l-10"></a>
-                                                                        <a href="#!"><img src="resources/images/avatar-4.jpg" data-toggle="tooltip" title="Lary Doe" alt="" class="img-40 m-l-10"></a>
-                                                                        <a href="#!"><img src="resources/images/avatar-2.jpg" data-toggle="tooltip" title="Josephin Doe" alt="" class="img-40 m-l-10"></a>
-                                                                    </div>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="to-do-list">
-                                                            <div class="checkbox-fade fade-in-primary d-block">
-                                                                <label class="check-task d-block">
-                                                                    <input type="checkbox" value="">
-                                                                    <span class="cr">
-                                                                        <i class="cr-icon icofont icofont-ui-check txt-default"></i>
-                                                                    </span>
-                                                                    <span><h6>Meeting With HOD's and borad</h6>
-                                                                        <p class="text-muted m-l-40">23 january 2003</p></span>
-                                                                        <div class="task-card-img m-l-40">
-                                                                            <a href="#!"><img src="resources/images/avatar-2.jpg" data-toggle="tooltip" title="Lary Doe" alt="" class="img-40"></a>
-                                                                            <a href="#!"><img src="resources/images/avatar-3.jpg" data-toggle="tooltip" title="Alia" alt="" class="img-40 m-l-10"></a>
-                                                                            <a href="#!"><img src="resources/images/avatar-2.jpg" data-toggle="tooltip" title="Josephin Doe" alt="" class="img-40 m-l-10"></a>
-                                                                        </div>
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            
                                                 <!-- Data widget End -->
                                                 
                                             </div>

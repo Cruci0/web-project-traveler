@@ -103,13 +103,15 @@
                    </div>
                    <!-- DataTales Example -->
                    <div class="card shadow mb-4">
+                   <form id="update-form" role="form" action="update" method="post">
 					 <div class="card-header py-3">
-					     <a href="" class="btn btn-primary btn-sm" style="float:right">수정완료</a>
+					     <a id="update-button" class="btn btn-primary btn-sm" style="float:right; color:white">수정완료</a>
 					     <div style="clear:both"></div>
 					 </div>
 					 <div class="card-body">
 					     <div class="table-responsive">
-			                   <table>
+					     
+							<table>
 			                   	<tbody>
 			                   	<tr>
 			                   		<th>ID</th>
@@ -125,8 +127,10 @@
 			                   	</tr>
 			                   	</tbody>
 			                   </table>
-							</div>
+						
 						</div>
+						</div>
+					</form>
 					</div>
            		</div>
                 <!-- /.container-fluid -->
@@ -193,11 +197,7 @@
 var $window = $(window);
 $(function() {
 	$('#update-button').on('click', function(event) {
-		
-		// 필요한 경우 입력 데이터 유효성 검사 수행
-		// Mform id="update-form"...> ... </form> 요소를 서버로 전송
 		$('#update-form').submit();
-		
 	});
 });
 </script>

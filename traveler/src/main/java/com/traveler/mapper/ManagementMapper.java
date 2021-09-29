@@ -11,4 +11,8 @@ public interface ManagementMapper {
 
 	List<MemberVO> selectAll();
 
+	MemberVO selectMemberById(String memberID);
+
+	void updateMember(MemberVO member);
+
 }

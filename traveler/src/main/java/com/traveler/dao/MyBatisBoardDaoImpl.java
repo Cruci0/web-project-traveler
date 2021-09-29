@@ -10,7 +10,7 @@ import lombok.Setter;
 
 public class MyBatisBoardDaoImpl implements BoardDao{
 	
-	private final String mapper = "com.demoweb.mapper.BoardMapper.";
+	private final String mapper = "com.traveler.mapper.BoardMapper.";
 	
 	@Setter
 	private SqlSessionTemplate sqlSessionTemplate;

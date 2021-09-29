@@ -12,4 +12,8 @@ public interface AuthService {
 
 	List<MemberVO> findAll();
 
+	MemberVO findMemberById(String memberID);
+
+	void updateMember(MemberVO member);
+
 }

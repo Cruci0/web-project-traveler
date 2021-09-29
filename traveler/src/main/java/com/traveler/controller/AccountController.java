@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.traveler.vo.BoardVO;
 import com.traveler.vo.MemberVO;
 import com.traveler.service.AuthService;
 import com.traveler.service.AuthServiceImpl;
@@ -96,9 +97,20 @@ public class AccountController {
 	}
 	
 	@GetMapping(path = {"/managemyaccount.action"})
-	public String showManageAccount() {
+	public String showManageMyAccount() {
 		
 		return "account/managemyaccount";
+	}
+	
+	@PostMapping(path = { "/update" })
+	public String update(MemberVO member) {
+		
+		// 1. 요청 데이터 읽기 (전달인자로 대체)
+		
+		// 2. 데이터베이스의 데이터 수정
+		authService.updateMember(member);
+		
+		return "redirect:mypage.action";
 	}
 	
 }

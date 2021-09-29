@@ -104,7 +104,7 @@
                    <!-- DataTales Example -->
                    <div class="card shadow mb-4">
 					 <div class="card-header py-3">
-					     <button id="edit-button" type="button" class="btn btn-success">개인정보수정</button>
+					     <a href="/traveler/account/managemyaccount.action" class="btn btn-primary btn-sm" style="float:right">개인정보수정</a>
 					     <div style="clear:both"></div>
 					 </div>
 					 <div class="card-body">
@@ -191,12 +191,6 @@
 
 <script>
 var $window = $(window);
-
-$(function() {
-	$('#edit-button').on('click', function(event) {
-		location.href = "managemyaccount?memberID=${ loginuser.memberID }";
-	})
-});
 
 </script>
 </body>

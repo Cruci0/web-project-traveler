@@ -3,7 +3,7 @@ $(document).ready(function() {
 
     lineChart();
    // areaChart();
-   // donutChart();
+    donutChart();
 
     $(window).on('resize',function() {
         window.lineChart.redraw();

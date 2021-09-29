@@ -19,7 +19,14 @@
 <!-- Custom js -->
 <script type="text/javascript" src="/traveler/resources/pages/dashboard/custom-dashboard.js"></script>
 <script type="text/javascript" src="/traveler/resources/js/script.js"></script>
+
 <script type="text/javascript " src="/traveler/resources/js/SmoothScroll.js"></script>
 <script src="/traveler/resources/js/pcoded.min.js"></script>
 <script src="/traveler/resources/js/demo-12.js"></script>
 <script src="/traveler/resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/traveler/resources/pages/chart/morris/morris-custom-chart.js"></script>
+<!-- Morris Chart js -->
+<script src="/traveler/resources/js/raphael/raphael.min.js"></script>
+<script src="/traveler/resources/js/morris.js/morris.js"></script>
+<!-- classie js -->
+<script type="text/javascript" src="/traveler/resources/js/classie/classie.js"></script>

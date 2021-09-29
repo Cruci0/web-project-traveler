@@ -193,7 +193,6 @@
 var $window = $(window);
 
 $(function() {
-	
 	$('#edit-button').on('click', function(event) {
 		location.href = "managemyaccount?memberID=${ loginuser.memberID }";
 	})

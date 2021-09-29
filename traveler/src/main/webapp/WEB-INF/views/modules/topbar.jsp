@@ -35,28 +35,13 @@
                      </a>
                      <ul class="show-notification profile-notification">
                          <li>
-                             <a href="#!">
-                                 <i class="ti-settings"></i> Settings
+                             <a href="/traveler/account/mypage.action">
+                                 <i class="ti-user"></i> 마이페이지
                              </a>
                          </li>
                          <li>
-                             <a href="#">
-                                 <i class="ti-user"></i> Profile
-                             </a>
-                         </li>
-                         <li>
-                             <a href="#">
-                                 <i class="ti-email"></i> My Messages
-                             </a>
-                         </li>
-                         <li>
-                             <a href="#">
-                                 <i class="ti-lock"></i> Lock Screen
-                             </a>
-                         </li>
-                         <li>
-                             <a href="auth-normal-sign-in.html">
-                                 <i class="ti-layout-sidebar-left"></i> Logout
+                             <a href="/traveler/account/logout.action">
+                                 <i class="ti-layout-sidebar-left"></i> 로그아웃
                              </a>
                          </li>
                      </ul>

@@ -143,7 +143,7 @@
 			                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																		 		<button id="search-button" class="btn btn-success btn-round" type="button" name ="click" value ="검색">&nbsp;검색&nbsp;</button>																		 		 
+																		 		<button id="search-button" class="btn btn-success btn-round" type="button" onclick="updateChart()" name ="click" value ="검색">&nbsp;검색&nbsp;</button>																		 		 
 																		 		 &nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;	
 																		 		<button class="btn btn-danger btn-round" type="button" name="click" value="초기화">초기화</button>
 																		 																	            
@@ -172,9 +172,8 @@
 											<div class="col-md-12 col-lg-6">
 												<div class="card">
 													<div class="card-header">
-														<h5>Bar chart</h5>
-														<span>lorem ipsum dolor sit amet, consectetur
-															adipisicing elit</span>
+														<h5>항공 운항 차트</h5>
+														<span></span>
 														<div class="card-header-right">
 															<i class="icofont icofont-spinner-alt-5"></i>
 														</div>
@@ -213,6 +212,7 @@
 				return;
 			}
 			location.href = "graph?destination=" + destination + "&airline="+ airline + "&date_from=" + date_from;
+			
 		});
 		
 			/* $('#day').on('change',function(event) {
@@ -233,44 +233,40 @@
 		Morris.Bar({
 		    element: 'morris-bar-chart',
 		    data: [{
-		        y: '2006',
+		        y: '3월',
 		        a: 100,
-		        b: 90,
-		        c: 60
+		    
 		    }, {
-		        y: '2007',
+		        y: '4월',
 		        a: 75,
-		        b: 65,
-		        c: 40
+		     
 		    }, {
-		        y: '2008',
+		        y: '5월',
 		        a: 50,
-		        b: 40,
-		        c: 30
+		       
 		    }, {
-		        y: '2009',
+		        y: '6월',
 		        a: 75,
-		        b: 65,
-		        c: 40
+		        
 		    }, {
-		        y: '2010',
+		        y: '7월',
 		        a: 50,
-		        b: 40,
-		        c: 30
+		       
 		    }, {
-		        y: '2011',
+		        y: '8월',
 		        a: 75,
-		        b: 65,
-		        c: 40
+		        
 		    }, {
-		        y: '2012',
+		        y: '9월',
 		        a: 100,
-		        b: 90,
-		        c: 40
+		       
+		    }, {
+		    	 y: '10월',
+			        a: 100,
 		    }],
 		    xkey: 'y',
-		    ykeys: ['a', 'b', 'c'],
-		    labels: ['A', 'B', 'C'],
+		    ykeys: ['a'],
+		    labels: ['A'],
 		    barColors: ['#5FBEAA', '#5D9CEC', '#cCcCcC'],
 		    hideHover: 'auto',
 		    gridLineColor: '#eef0f2',

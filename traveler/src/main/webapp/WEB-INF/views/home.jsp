@@ -36,6 +36,30 @@
 		tr:nth-child(even) {
 		  background-color: #F0FFFF;
 		}
+				/* banner */
+		.banner {position: relative; width: 1200px; height: 360px; top: 50px;  margin:0 auto; padding:0; overflow: hidden;}
+		.banner ul {position: absolute; margin: 0px; padding:0; list-style: none; }
+		.banner ul li {float: left; width: 1200px; height: 360px; margin:0; padding:0;}
+		
+		/* swiper */
+		.swiper-container {
+			height:420px;
+			border:5px solid silver;
+			border-radius:7px;
+			box-shadow:0 0 20px #ccc inset;
+		}
+		.swiper-slide {
+			text-align:center;
+			display:flex; /* 내용을 중앙정렬 하기위해 flex 사용 */
+			align-items:center; /* 위아래 기준 중앙정렬 */
+			justify-content:center; /* 좌우 기준 중앙정렬 */
+		}
+		.swiper-slide img {
+			box-shadow:0 0 5px #555;
+			max-width:100%; /* 이미지 최대너비를 제한, 슬라이드에 이미지가 여러개가 보여질때 필요 */
+			/* 이 예제에서 필요해서 설정했습니다. 상황에따라 다를 수 있습니다. */
+		}
+	
 		</style>
   </head>
 
@@ -95,41 +119,31 @@
 
                                     <div class="page-body">
                                         <div class="row">
-                                            <!-- card1 start -->
-
-                                            <!-- card1 end -->
-                                            <!-- card1 start -->
+                                        
+                                        <!-- card1 start -->
+                                          <span style="text-align:left; margin-top:10px; font-size:30px; color:pink">공지 사항</span>
+											<div class="contents">
+												<div class="banner">
+													<ul>
+														<li><img src="resources/images/slide1.jpg" width="1200" height="360px"></li>
+														<li><img src="resources/images/slide2.jpg" width="1200" height="360px"></li>
+														<li><img src="resources/images/slide3.jpg" width="1200" height="360px"></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<br><br><br><br><br>
+										<div>	
                                             
                                             <!-- card1 end -->
                                             
-                                            <!-- card1 start -->
+                                            <!-- card2 start -->
                                             <span style="text-align:left; margin-top:10px; font-size:30px; color:green">추천 여행</span>
 
 												<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
 												<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 												
-												<style type="text/css">
-												
-												.swiper-container {
-													height:420px;
-													border:5px solid silver;
-													border-radius:7px;
-													box-shadow:0 0 20px #ccc inset;
-												}
-												.swiper-slide {
-													text-align:center;
-													display:flex; /* 내용을 중앙정렬 하기위해 flex 사용 */
-													align-items:center; /* 위아래 기준 중앙정렬 */
-													justify-content:center; /* 좌우 기준 중앙정렬 */
-												}
-												.swiper-slide img {
-													box-shadow:0 0 5px #555;
-													max-width:100%; /* 이미지 최대너비를 제한, 슬라이드에 이미지가 여러개가 보여질때 필요 */
-													/* 이 예제에서 필요해서 설정했습니다. 상황에따라 다를 수 있습니다. */
-												}
-												
-												</style>
-												
+
 												<div class="swiper-container">
 													<div class="swiper-wrapper">
 														<div class="swiper-slide"><img src="resources/images/그림1.jpg"></div>
@@ -149,35 +163,8 @@
 													<!-- 페이징 -->
 													<div class="swiper-pagination"></div>
 												</div>
-												
-												<script>
-												
-												new Swiper('.swiper-container', {
-												
-													slidesPerView : 4, // 동시에 보여줄 슬라이드 갯수
-													spaceBetween : 5, // 슬라이드간 간격
-													slidesPerGroup : 1, // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
-												
-													// 그룹수가 맞지 않을 경우 빈칸으로 메우기
-													// 3개가 나와야 되는데 1개만 있다면 2개는 빈칸으로 채워서 3개를 만듬
-													loopFillGroupWithBlank : true,
-												
-													loop : true, // 무한 반복
-												
-													pagination : { // 페이징
-														el : '.swiper-pagination',
-														clickable : true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
-													},
-													navigation : { // 네비게이션
-														nextEl : '.swiper-button-next', // 다음 버튼 클래스명
-														prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
-													},
-												});
-												
-												</script>
-                                            
-                                            <!-- card1 end -->
-                                            <!-- card1 start -->
+                               
+                                            <!-- card2 end -->
                                             
 									                                            
 									                <!-- Begin Page Content -->
@@ -244,7 +231,7 @@
 									                </div>
 																				                
                                             
-                                            <!-- card1 end -->
+                                            <!-- card3 end -->
                                             
                                             
                                             <!-- Statestics Start -->
@@ -315,11 +302,66 @@
 <![endif]-->
 <!-- Warning Section Ends -->
 <jsp:include page="/WEB-INF/views/modules/common-js.jsp" />
+<script type="text/javascript">
+	
+	new Swiper('.swiper-container', {
+	
+		slidesPerView : 4, // 동시에 보여줄 슬라이드 갯수
+		spaceBetween : 5, // 슬라이드간 간격
+		slidesPerGroup : 1, // 그룹으로 묶을 수, slidesPerView 와 같은 값을 지정하는게 좋음
+	
+		// 그룹수가 맞지 않을 경우 빈칸으로 메우기
+		// 3개가 나와야 되는데 1개만 있다면 2개는 빈칸으로 채워서 3개를 만듬
+		loopFillGroupWithBlank : true,
+	
+		loop : true, // 무한 반복
+	
+		pagination : { // 페이징
+			el : '.swiper-pagination',
+			clickable : true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
+		},
+		navigation : { // 네비게이션
+			nextEl : '.swiper-button-next', // 다음 버튼 클래스명
+			prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
+		},
+		
+	});
 
-<script>
-var $window = $(window);
+	//////////////////////////
+	
+	$(document).ready(function() {
+		var $banner = $(".banner").find("ul");
 
+		var $bannerWidth = $banner.children().outerWidth();
+		var $bannerHeight = $banner.children().outerHeight();
+		var $length = $banner.children().length;
+		var rollingId;
+
+	
+		// rollingId = setInterval(function() { rollingStart(); }, 3000);
+    
+		function rollingStart() {
+			$banner.css("width", $bannerWidth * $length + "px");
+			$banner.css("height", $bannerHeight + "px");
+			//alert(bannerHeight);
+
+			$banner.animate(
+					{left: - $bannerWidth + "px"}, 
+					5000, 
+					function() {
+						$(this).append("<li>" + $(this).find("li:first").html() + "</li>");
+						$(this).find("li:first").remove();		
+						$(this).css("left", 0);
+						
+						setTimeout(function() { rollingStart(); }, 2000);
+					}
+			);
+		}
+		rollingStart(); 
+	}); 
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+
 </body>
 
 </html>

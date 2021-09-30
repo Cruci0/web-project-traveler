@@ -12,6 +12,7 @@ import com.traveler.dao.TravelerDao;
 import com.traveler.dao.TravelerDaoImpl;
 import com.traveler.mapper.FlightsMapper;
 import com.traveler.vo.BoardVO;
+import com.traveler.vo.FlightScheduleStatVO;
 import com.traveler.vo.FlightSchedules;
 
 import lombok.Setter;
@@ -151,6 +152,19 @@ public class TravelerServiceImpl implements TravelerService{
 		// TODO Auto-generated method stub
 		return dateFrom;
 	}
+
+
+	@Override
+	public List<FlightScheduleStatVO> findDailyCount(String destination, String airline, String date_from) {
+		HashMap<String, Object> params = new HashMap<String, Object>();
+		params.put("destination", destination);
+		params.put("airline", airline);
+		params.put("date_from",date_from);
+		List<FlightScheduleStatVO> dailyCounts= flightsMapper.selectFlightScheduleStat(params);
+		return dailyCounts;
+	}
+
+
 
 	
 

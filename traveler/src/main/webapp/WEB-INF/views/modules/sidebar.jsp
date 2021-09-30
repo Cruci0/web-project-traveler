@@ -36,11 +36,22 @@
 		</ul>
 		<ul class="pcoded-item pcoded-left-item">
 			<div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">View Charts</div>
-			<li><a href="/traveler/traveler/graph">
+			<li class="pcoded-hasmenu">
+			<a href="javascript:void(0)">
 				<span class="pcoded-micon"><i class="ti-pie-chart"></i><b>FC</b></span>
-				<span class="pcoded-mtext" data-i18n="nav.form-components.main">데이터 시각화</span>
+				<span class="pcoded-mtext" data-i18n="nav.form-components.main">항공기 운항 차트</span>
 				<span class="pcoded-mcaret"></span>
-			</a></li>
+			</a>
+			<ul class="pcoded-submenu">
+                <li class=" ">
+                  <a href="/traveler/traveler/graph">
+                     <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                      <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">월별 항공기 요일 운항 횟수</span>
+                      <span class="pcoded-mcaret"></span>
+                    </a>
+                   </li>
+               </ul>
+			</li>
 		</ul>
 		<ul class="pcoded-item pcoded-left-item">
 			<div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">My Account</div>

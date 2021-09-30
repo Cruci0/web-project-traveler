@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.traveler.service.TravelerService;
 import com.traveler.vo.BoardVO;
+import com.traveler.vo.FlightScheduleStatVO;
 import com.traveler.vo.FlightSchedules;
 
 @Controller
@@ -75,11 +76,20 @@ public class TravelerController {
 //					// 여기에 아래와 같이 데이터 조회 작업을 구현해야 합니다.			
 //					// flights = travelerService.데이터조회메서드(airline);
 //				}
-				
+				//2. 데이터 조회 작업
+				List<FlightScheduleStatVO> dailyCounts = null;
+				if(destination != null && airline != null && date_from !=null) {
+					dailyCounts = travelerService.findDailyCount(destination,airline,date_from);
+				}
+				/*
+				 * List<FlightScheduleStatVO> dailyCounts=travelerService.findDailyCount(destination,airline,date_from);
+				 */
+								
 				// 3. 조회된 데이터를 jsp에서 읽을 수 있도록 request 객체에 저장
 				//model.addAttribute("selectedAirline", airline);
 				model.addAttribute("selectedDestination", destination);
 				model.addAttribute("destinations", destinations);
+				model.addAttribute("selectedDateFrom", date_from);
 				
 				if (airlines != null) {
 					model.addAttribute("airlines", airlines);			
@@ -89,6 +99,13 @@ public class TravelerController {
 				if (dateFrom != null) {
 					model.addAttribute("dateFrom", dateFrom);
 				}
+				
+				System.out.println(dailyCounts);
+				if (dailyCounts != null) {
+					
+					model.addAttribute("dailyCounts",dailyCounts);
+				}
+				
 		
 		return "traveler/graph";
 	}

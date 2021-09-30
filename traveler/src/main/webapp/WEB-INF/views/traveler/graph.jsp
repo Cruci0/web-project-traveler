@@ -5,7 +5,7 @@
 <html lang="ko">
 
 <head>
-    <title>Flight Chart </title>
+    <title>Flight Search </title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -60,7 +60,7 @@
                                                 <div class="page-header-title">
                                                     <i class="icofont icofont-file-code bg-c-blue"></i>
                                                     <div class="d-inline">
-                                                        <h4>월별 항공기 운항 횟수</h4>
+                                                        <h4>월별 항공기 요일 운항 횟수</h4>
                                                         <span>2021년 인천항공출발 하계 항공스케쥴만 검색됩니다.</span>
                                                     </div>
                                                 </div>
@@ -98,7 +98,7 @@
                                                         </div>
                                                         <div class="card-block">
                                                           
-                                                            <form action="graph" id="searchGraph">
+                                                            <form action="search" id="searchForm">
                                                                 <div class="form-group row">
                                                                    <label class="col-sm-2 col-form-label">목적지</label> 
                                                                    <select id="destination" name="destination">
@@ -118,8 +118,8 @@
 																</select>
                                                                 </div>    
                                                                     <div class="form-group row">
-                                                                        <label class="col-sm-2 col-form-label">월별 선택</label> 
-                                                                        <select id="date_from" name="date_from">
+                                                                        <label class="col-sm-2 col-form-label">출발 월</label> 
+                                                                        <select id=date_from name="date_from">
 																	<c:forEach var="date_from" items="${ dateFrom }">
 																		<option value="${ date_from }"
 																			${ selectedDateFrom == date_from ? "selected" : "" } >${ date_from }</option>
@@ -143,7 +143,7 @@
 			                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-																		 		<button id="search-button" class="btn btn-success btn-round" type="button" onclick="updateChart()" name ="click" value ="검색">&nbsp;검색&nbsp;</button>																		 		 
+																		 		<button id="search-button" class="btn btn-success btn-round" type="button" name ="click" value ="검색">&nbsp;검색&nbsp;</button>																		 		 
 																		 		 &nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;	
 																		 		<button class="btn btn-danger btn-round" type="button" name="click" value="초기화">초기화</button>
 																		 																	            
@@ -168,11 +168,13 @@
 																
 																</script>		 -->																										
 										                       <!-- 검색결과 -->
-                                                              <!-- Bar Chart start -->
+                                                                 <!-- Bar Chart start -->
 											<div class="col-md-12 col-lg-6">
 												<div class="card">
 													<div class="card-header">
-														<h5>항공 운항 차트</h5>
+														
+														<h5>요일별 운항 횟수</h5>
+														
 														<span></span>
 														<div class="card-header-right">
 															<i class="icofont icofont-spinner-alt-5"></i>
@@ -190,6 +192,31 @@
 
 <jsp:include page="/WEB-INF/views/modules/common-js.jsp" />
 
+<c:forEach var="dailyCount" items="${ dailyCounts }">
+	<p>${ dailyCount.day } / ${ dailyCount.dailyCount }</p>		
+</c:forEach>
+
+<script type="text/javascript">
+	var data= {
+			<c:forEach var="dailyCount" items="${ dailyCounts }">
+			<p>${ dailyCount.day } / ${ dailyCount.dailyCount }</p>		
+			</c:forEach>
+			
+	}
+	$(function(){
+			
+		
+		
+	})
+	/* var dailyCount=${ dailyCounts }; 
+		
+	dailyCount.forEach(function(dailyCounts){
+		console.log('${ dailyCounts}');
+		
+	}); */
+
+</script>
+
 <script type="text/javascript">
 	$(function() {
 			
@@ -206,13 +233,12 @@
 		$('#search-button').on('click', function(event) {
 			var destination = $('#destination').val();
 			var airline = $('#airline').val();
-			var day = $('#date_from').val();
-			if (!destination || !airline || !day) {
+			var dateFrom = $('#date_from').val();
+			if (!destination || !airline || !dateFrom) {
 				alert("조회 조건을 모두 선택하세요");
 				return;
 			}
-			location.href = "graph?destination=" + destination + "&airline="+ airline + "&date_from=" + date_from;
-			
+			location.href = "graph?destination=" + destination + "&airline="+ airline + "&date_from=" + dateFrom;
 		});
 		
 			/* $('#day').on('change',function(event) {
@@ -227,46 +253,20 @@
 			$('#searchForm').submit();
 			
 		}); */
+		/////////////////////////////////////////////////////////////////////
+		var dailyCountData= [];
 		
-		///////////////////////////////////////////////////////////////////
+		<c:forEach var="dailyCount" items="${ dailyCounts }">
+		dailyCountData.push( { day: '${ dailyCount.day }' , count: ${ dailyCount.dailyCount } } )		
+		</c:forEach>
 		
+	    	
 		Morris.Bar({
 		    element: 'morris-bar-chart',
-		    data: [{
-		        y: '3월',
-		        a: 100,
-		    
-		    }, {
-		        y: '4월',
-		        a: 75,
-		     
-		    }, {
-		        y: '5월',
-		        a: 50,
-		       
-		    }, {
-		        y: '6월',
-		        a: 75,
-		        
-		    }, {
-		        y: '7월',
-		        a: 50,
-		       
-		    }, {
-		        y: '8월',
-		        a: 75,
-		        
-		    }, {
-		        y: '9월',
-		        a: 100,
-		       
-		    }, {
-		    	 y: '10월',
-			        a: 100,
-		    }],
-		    xkey: 'y',
-		    ykeys: ['a'],
-		    labels: ['A'],
+		    data: dailyCountData,
+		    xkey: 'day',
+		    ykeys: ['count'],
+		    labels: ['Daily Count'],
 		    barColors: ['#5FBEAA', '#5D9CEC', '#cCcCcC'],
 		    hideHover: 'auto',
 		    gridLineColor: '#eef0f2',

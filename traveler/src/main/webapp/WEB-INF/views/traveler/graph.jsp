@@ -145,7 +145,7 @@
 			                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 																		 		<button id="search-button" class="btn btn-success btn-round" type="button" name ="click" value ="검색">&nbsp;검색&nbsp;</button>																		 		 
 																		 		 &nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;	
-																		 		<button class="btn btn-danger btn-round" type="button" name="click" value="초기화">초기화</button>
+																		 		<button id="initialize-button" class="btn btn-danger btn-round" type="button" name="click" value="초기화">초기화</button>
 																		 																	            
 																	</div>	
 																</div>	
@@ -240,7 +240,10 @@
 			}
 			location.href = "graph?destination=" + destination + "&airline="+ airline + "&date_from=" + dateFrom;
 		});
-		
+		$('#initialize-button').on('click', function(event) {
+			
+			location.href = "graph?destination="+ $(this).val();
+		});
 			/* $('#day').on('change',function(event) {
 		// alert($(this).val());
 			location.href = "graph?day="+ $(this).val();

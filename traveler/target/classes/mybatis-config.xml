@@ -13,6 +13,7 @@
 		<typeAlias type="com.traveler.vo.BoardVO" alias="BoardVO" />
 		<typeAlias type="com.traveler.vo.FlightSchedules" alias="FlightSchedules" />
 		<typeAlias type="com.traveler.vo.FlightScheduleStatVO" alias="FlightScheduleStatVO" />
+		<typeAlias type="com.traveler.vo.Criteria" alias="Criteria" />
 	</typeAliases>
 
 	<mappers>

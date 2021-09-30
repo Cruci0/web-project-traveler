@@ -101,32 +101,34 @@
                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
                        <h1 class="h3 mb-0 text-gray-800">개인정보수정</h1>
                    </div>
-                   <!-- DataTales Example -->
+                   <!-- DataTales -->
                    <div class="card shadow mb-4">
-                   <form id="update-form" role="form" action="update" method="post">
+                   <form id="account-update-form" role="form" action="update" method="post">
+                   <!-- 이메일 정보 뿐만 아니라 프라임키인 memberID도 넘겨야 테이블 안에서 멤버를 특정해서 이메일 정보를 넣게 할 수 있다. -->
+                   	<input type="hidden" name="memberID" value="${ loginuser.memberID }" >
 					 <div class="card-header py-3">
-					     <a id="update-button" class="btn btn-primary btn-sm" style="float:right; color:white">수정완료</a>
+					     <a id="account-update-button" class="btn btn-primary btn-sm" style="float:right; color:white">수정완료</a>
 					     <div style="clear:both"></div>
 					 </div>
 					 <div class="card-body">
 					     <div class="table-responsive">
 					     
 							<table>
-			                   	<tbody>
-			                   	<tr>
-			                   		<th>ID</th>
-			                   		<td>${ loginuser.memberID }</td>
-			                   	</tr>
-			                   	<tr>
-			                   		<th>이메일</th>
-			                   		<td><input class="form-control" id='email' name='email' value='${ loginuser.email }'></td>
-			                   	</tr>
-			                   	<tr>
-			                   		<th>가입일자</th>
-			                   		<td>${ loginuser.regDate }</td>
-			                   	</tr>
-			                   	</tbody>
-			                   </table>
+								<tbody>
+								<tr>
+									<th>ID</th>
+									<td>${ loginuser.memberID }</td>
+								</tr>
+								<tr>
+									<th>이메일</th>
+									<td><input class="form-control" id='email' name='email' value='${ loginuser.email }'></td>
+								</tr>
+								<tr>
+									<th>가입일자</th>
+									<td>${ loginuser.regDate }</td>
+								</tr>
+								</tbody>
+							</table>
 						
 						</div>
 						</div>
@@ -196,8 +198,8 @@
 <script>
 var $window = $(window);
 $(function() {
-	$('#update-button').on('click', function(event) {
-		$('#update-form').submit();
+	$('#account-update-button').on('click', function(event) {
+		$('#account-update-form').submit();
 	});
 });
 </script>

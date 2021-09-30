@@ -103,12 +103,19 @@ public class AccountController {
 	}
 	
 	@PostMapping(path = { "/update" })
-	public String update(MemberVO member) {
+	public String update(MemberVO member, HttpSession session) {
 		
 		// 1. 요청 데이터 읽기 (전달인자로 대체)
+		//String email = member.getEmail();
+//		MemberVO loggedInMember = (MemberVO)session.getAttribute("loginuser");//현재 로그인한 사용자 정보 가져오기
 		
 		// 2. 데이터베이스의 데이터 수정
 		authService.updateMember(member);
+		
+		// 3. 이메일이 업데이트 된 후 마이페이지에 email 바뀌지 않는 것 해결.
+		//    loginuser 안에 email 정보는 바뀌지 않은 채로 남아있었기 때문. loginuser 안에 있는 정보를 update해주는 작업. 
+		MemberVO updatedMember = authService.findMemberById(member.getMemberID());
+		session.setAttribute("loginuser", updatedMember);
 		
 		return "redirect:mypage.action";
 	}

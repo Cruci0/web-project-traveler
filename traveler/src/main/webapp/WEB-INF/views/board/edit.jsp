@@ -196,7 +196,6 @@ var $window = $(window);
 <script type="text/javascript">
 	$(function() {
 		$('#update-button').on('click', function(event) {
-			
 			// 필요한 경우 입력 데이터 유효성 검사 수행
 			// Mform id="update-form"...> ... </form> 요소를 서버로 전송
 			$('#update-form').submit();

@@ -119,7 +119,7 @@
 
                                     <div class="page-body">
                                         <div class="row">
-                                        
+                                      
                                         <!-- card1 start -->
                                           <span style="text-align:left; margin-top:10px; font-size:30px; color:pink">공지 사항</span>
 											<div class="contents">

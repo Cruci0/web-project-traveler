@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.traveler.vo.Criteria;
 import com.traveler.vo.FlightScheduleStatVO;
 import com.traveler.vo.FlightSchedules;
 
@@ -30,4 +31,6 @@ public interface FlightsMapper {
 	List<String> selectDateFromByDestinationAndAirline(HashMap<String, Object> params);
 
 	List<FlightScheduleStatVO> selectFlightScheduleStat(HashMap<String, Object> params);
+	
+	List<FlightSchedules> searchedList(Criteria cri);
 }

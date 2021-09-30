@@ -149,24 +149,7 @@
 																		 																	            
 																	</div>	
 																</div>	
-																<!-- <script type="text/javascript">
-																$("a.search").on("click", function(e){
-																	e.preventDefault();
-																	var flightsearchform = $("#flightsearchForm");
-																	if(!searchFrom.find("input[name='destinationkeyword']").val()){
-																		alert("목적지를 입력하세요");
-																		return false;
-																	}
-																	if(!searchFrom.find("input[name='airlinekeyword']").val()){
-																		alert("항공사를 입력하세요");
-																		return false;
-																	} 
-																	flightsearchForm.submit();
-																	
-																})
-																
-																
-																</script>		 -->																										
+																									
 										                       <!-- 검색결과 -->
                                                                 <div class="card">
                                                                 	<div class="card-header">
@@ -181,7 +164,17 @@
 																				<th>항공사</th>
 																				<th>목적지</th>
 																			</tr>
-																		
+																			     <c:forEach var="flightList" items="${ flightList }">   
+																			     <tr>                                                                	
+																				<th>${ flightList.day }</th>
+																				<th>${ flightList.flight }</th>
+																				<th>${ flightList.time }</th>
+																				<th>${ flightList.date_from }</th>
+																				<th>${ flightList.date_to }</th>
+																				<th>${ flightList.airline }</th>
+																				<th>${ flightList.destination }</th>
+																			</tr>
+																		     </c:forEach>
 																			
                                                                         </table>                                                                     
                                                                     </div>
@@ -194,7 +187,8 @@
 
 <script type="text/javascript">
 	$(function() {
-			
+		
+		//검색조건 선택
 		$('#airline').on('change',function(event) {
 			var destination = $('#destination').val();
 			location.href = "search?destination=" + destination + "&airline="+ $(this).val();
@@ -205,6 +199,7 @@
 			location.href = "search?destination="+ $(this).val();
 		});
 		
+		//검색버튼 
 		$('#search-button').on('click', function(event) {
 			var destination = $('#destination').val();
 			var airline = $('#airline').val();
@@ -213,23 +208,14 @@
 				alert("조회 조건을 모두 선택하세요");
 				return;
 			}
-			location.href = "search?destination=" + destination + "&airline="+ airline + "&day=" + day;
+			location.href = "search2?destination=" + destination + "&airline="+ airline + "&day=" + day;
 		});
 		
-			/* $('#day').on('change',function(event) {
-		// alert($(this).val());
-			location.href = "graph?day="+ $(this).val();
-			});
-		$('#searchForm').on('click', function(event) {
-			
-			// 필요한 경우 입력 데이터 유효성 검사 수행
-
-			// <form id="graphForm" ...> ... </form> 요소를 서버로 전송
-			$('#searchForm').submit();
-			
-		}); */
+	
+		
 	})
 </script>
+
 
 <script>
 var $window = $(window);
@@ -243,6 +229,7 @@ var nav = $('.fixed-button');
      }
  });
 </script>
+
 </body>
 
 </html>

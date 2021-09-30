@@ -12,6 +12,7 @@ import com.traveler.dao.TravelerDao;
 import com.traveler.dao.TravelerDaoImpl;
 import com.traveler.mapper.FlightsMapper;
 import com.traveler.vo.BoardVO;
+import com.traveler.vo.Criteria;
 import com.traveler.vo.FlightScheduleStatVO;
 import com.traveler.vo.FlightSchedules;
 
@@ -166,7 +167,11 @@ public class TravelerServiceImpl implements TravelerService{
 
 
 
-	
+	@Override
+	public List<FlightSchedules> readsearchedList(Criteria cri) {
+		List<FlightSchedules> searchedLists = flightsMapper.searchedList(cri);
+		return searchedLists;
+	}
 
 	
 

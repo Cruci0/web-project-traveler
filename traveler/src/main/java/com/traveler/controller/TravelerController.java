@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.traveler.service.TravelerService;
 import com.traveler.vo.BoardVO;
+import com.traveler.vo.FlightScheduleStatVO;
 import com.traveler.vo.FlightSchedules;
 
 @Controller
@@ -75,11 +76,20 @@ public class TravelerController {
 //					// 여기에 아래와 같이 데이터 조회 작업을 구현해야 합니다.			
 //					// flights = travelerService.데이터조회메서드(airline);
 //				}
-				
+				//2. 데이터 조회 작업
+				List<FlightScheduleStatVO> dailyCounts = null;
+				if(destination != null && airline != null && date_from !=null) {
+					dailyCounts = travelerService.findDailyCount(destination,airline,date_from);
+				}
+				/*
+				 * List<FlightScheduleStatVO> dailyCounts=travelerService.findDailyCount(destination,airline,date_from);
+				 */
+								
 				// 3. 조회된 데이터를 jsp에서 읽을 수 있도록 request 객체에 저장
 				//model.addAttribute("selectedAirline", airline);
 				model.addAttribute("selectedDestination", destination);
 				model.addAttribute("destinations", destinations);
+				model.addAttribute("selectedDateFrom", date_from);
 				
 				if (airlines != null) {
 					model.addAttribute("airlines", airlines);			
@@ -89,6 +99,13 @@ public class TravelerController {
 				if (dateFrom != null) {
 					model.addAttribute("dateFrom", dateFrom);
 				}
+				
+				System.out.println(dailyCounts);
+				if (dailyCounts != null) {
+					
+					model.addAttribute("dailyCounts",dailyCounts);
+				}
+				
 		
 		return "traveler/graph";
 	}
@@ -146,7 +163,49 @@ public class TravelerController {
 		
 		return "traveler/search";
 	}
-
+	/*
+	 * @GetMapping(path = { "/chart" }) public String chart(String airline, String
+	 * date_from, String destination, Model model) {
+	 * 
+	 * // 1. 데이터 읽기 (전달인자를 통해서 수신)
+	 * 
+	 * //List<FlightSchedules> airlines = travelerService.readAirline();
+	 * //List<FlightSchedules> days = travelerService.readDay();
+	 * List<FlightSchedules> destinations = travelerService.readDestination();
+	 * 
+	 * 
+	 * List<String> airlines = null; if (destination != null) { airlines =
+	 * travelerService.readAirlineByDestination(destination); }
+	 * 
+	 * List<String> dateFrom = null; if (destination != null && airline != null) {
+	 * dateFrom = travelerService.readDateFromByDestinationAndAirline(destination,
+	 * airline); }
+	 */
+				
+				/*
+				 * System.out.println(destinations); System.out.println(dateFrom);
+				 */
+//				List<FlightSchedules> flights = null;
+//				if (airline != null && airline.length() > 0) {
+//					// List<FlightSchedules> flights = travelerService.readFlight(); // 기존 코드
+//					
+//					// 여기에 아래와 같이 데이터 조회 작업을 구현해야 합니다.			
+//					// flights = travelerService.데이터조회메서드(airline);
+//				}
+				
+				// 3. 조회된 데이터를 jsp에서 읽을 수 있도록 request 객체에 저장
+				//model.addAttribute("selectedAirline", airline);
+				/*
+				 * model.addAttribute("selectedDestination", destination);
+				 * model.addAttribute("destinations", destinations);
+				 * 
+				 * if (airlines != null) { model.addAttribute("airlines", airlines); }
+				 * model.addAttribute("selectedAirline", airline);
+				 * 
+				 * if (dateFrom != null) { model.addAttribute("dateFrom", dateFrom); }
+				 * 
+				 * return "traveler/chart"; }
+				 */
 	/*
 	 * @GetMapping(path = { "/graph" }) public String flight(String flight, Model
 	 * model) { // 1. 데이터 읽기 (전달인자를 통해서 수신) List<FlightSchedules> flights =

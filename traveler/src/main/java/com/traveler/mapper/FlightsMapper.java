@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.traveler.vo.FlightScheduleStatVO;
 import com.traveler.vo.FlightSchedules;
 
 // BoardMapper.xml 파일과 매핑되는 인터페이스 정의 -> Spring이 Mapper 객체를 자동으로 생성
@@ -28,4 +29,5 @@ public interface FlightsMapper {
 
 	List<String> selectDateFromByDestinationAndAirline(HashMap<String, Object> params);
 
+	List<FlightScheduleStatVO> selectFlightScheduleStat(HashMap<String, Object> params);
 }

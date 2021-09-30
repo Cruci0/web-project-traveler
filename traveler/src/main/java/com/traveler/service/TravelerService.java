@@ -3,6 +3,7 @@ package com.traveler.service;
 import java.util.List;
 
 import com.traveler.vo.BoardVO;
+import com.traveler.vo.FlightScheduleStatVO;
 import com.traveler.vo.FlightSchedules;
 
 
@@ -28,6 +29,9 @@ public interface TravelerService {
 		List<String> readDayByDestinationAndAirline(String destination, String airline);
 
 		List<String> readDateFromByDestinationAndAirline(String destination, String airline);
+
+		List<FlightScheduleStatVO> findDailyCount(String destination, String airline, String date_from);
+
 		
 
 	

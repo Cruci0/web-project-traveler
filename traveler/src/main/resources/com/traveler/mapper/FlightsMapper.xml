@@ -60,6 +60,13 @@
 		from flight_schedules 
 		where destination = #{ destination } and airline = #{ airline }
 	</select>
+
 	
+	<select id="selectFlightScheduleStat" parameterType="hashmap" resultType="FlightScheduleStatVO">
+		select day, count(*) as dailyCount
+		from flight_schedules
+		where destination = #{ destination } and airline = #{ airline } and month(date_from) = #{ date_from }
+		group by day;
+	</select>
 
 </mapper>

@@ -12,6 +12,7 @@
 		<typeAlias type="com.traveler.vo.MemberVO" alias="MemberVO" />
 		<typeAlias type="com.traveler.vo.BoardVO" alias="BoardVO" />
 		<typeAlias type="com.traveler.vo.FlightSchedules" alias="FlightSchedules" />
+		<typeAlias type="com.traveler.vo.FlightScheduleStatVO" alias="FlightScheduleStatVO" />
 	</typeAliases>
 
 	<mappers>

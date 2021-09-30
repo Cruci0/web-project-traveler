@@ -219,7 +219,7 @@
 										                                            	<a href="/traveler/account/login.action">${ board.title }</a>
 										                                            	</c:when>
 									                                            		<c:otherwise>
-									                                            		<a href="detail?boardNo=${ board.boardNo }">${ board.title }</a>
+									                                            		<a href="/traveler/board/detail?boardNo=${ board.boardNo }">${ board.title }</a>
 									                                            		</c:otherwise>
 									                                            		</c:choose>
 									                                            	</c:when>

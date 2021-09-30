@@ -18,6 +18,11 @@
 	SET email = #{ email }
 	WHERE Memberid = #{ memberID }
 	</update>
-
+	
+	<select id="selectMemberById" parameterType="String" resultType="MemberVO">
+	SELECT Memberid, email, regdate
+	FROM member
+	WHERE Memberid = #{ memberID }
+	</select>
 	
 </mapper>

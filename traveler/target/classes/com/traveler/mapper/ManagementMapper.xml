@@ -20,7 +20,7 @@
 	</update>
 	
 	<select id="selectMemberById" parameterType="String" resultType="MemberVO">
-	SELECT Memberid, email, regdate
+	SELECT Memberid, email, usertype, active, regdate
 	FROM member
 	WHERE Memberid = #{ memberID }
 	</select>

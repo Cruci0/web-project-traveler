@@ -83,53 +83,60 @@
 
                                     <!-- Page body start -->
                                     <div class="page-body">
-                                        <div class="row">
+                                      <div class="row">
                                             <div class="col-sm-12">
                                                 <!-- Basic Form Inputs card start -->
                                                 <div class="card">
-                                                    <div class="card-header">                                                   
-                                                        <div class="card-header-right"><i
-                                                            class="icofont icofont-spinner-alt-5"></i></div>
-
-                                                            <div class="card-header-right">
-                                                                <i class="icofont icofont-spinner-alt-5"></i>
-                                                            </div>
-
-                                                        </div>
+                                                    <div class="card-header">
+                                                        <h5>목적지, 항공사, 출발요일을 모두 입력하세요.</h5>
+                                                    </div>
                                                         <div class="card-block">
-                                                          
-                                                            <form action="search" id="searchForm">
-                                                                <div class="form-group row">
-                                                                   <label class="col-sm-2 col-form-label">목적지</label> 
-                                                                   <select id="destination" name="destination">
-																	<c:forEach var="destination" items="${ destinations }">
-																		<option value="${ destination }"
+                                                            <form>
+                                                                <div class="form-group row"></div>
+																	
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">
+                                                                        목적지</label>
+                                                                        <div class="col-sm-10">
+                                                                   <select id="destination" name="destination" class="form-control">
+                                                                   		<option value="">목적지를 선택하세요.</option>
+																		<c:forEach var="destination" items="${ destinations }">
+																			<option value="${ destination }"
 																			${ selectedDestination == destination ? "selected" : "" }>${ destination }</option>
-																	</c:forEach>
-																</select>
-                                                                </div>
-                                                                 <div class="form-group row">
-                                                                    <label class="col-sm-2 col-form-label">항공사</label> 
-                                                                    <select id="airline" name="airline">
+																		</c:forEach>
+																  </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group row">
+                                                                        <label class="col-sm-2 col-form-label">항공사</label>
+                                                                        <div class="col-sm-10">
+                                                                    <select id="airline" name="airline" class="form-control">
+                                                                    <option value="">항공사를 선택하세요.</option>
 																	<c:forEach var="airline" items="${ airlines }">
 																		<option value="${ airline }"
 																			${ selectedAirline == airline ? "selected" : "" }>${ airline }</option>
 																	</c:forEach>
-																</select>
-                                                                </div>    
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
                                                                     <div class="form-group row">
-                                                                        <label class="col-sm-2 col-form-label">출발요일</label> 
-                                                                        <select id="day" name="day">
+                                                                        <label class="col-sm-2 col-form-label">출발요일</label>
+                                                                        <div class="col-sm-10">
+                                                                        <select id="day" name="day" class="form-control">
+                                                                        <option value="">출발요일을 선택하세요</option>
 																	<c:forEach var="day" items="${ days }">
 																		<option value="${ day }"
 																			${ selectedDay == day ? "selected" : "" } >${ day }</option>
 																	</c:forEach>
-																</select>
+                                                                            </select>
                                                                         </div>
-                                                                    </form>
+                                                                    </div> 
+                                                             </form>
                                                                     </div>
+                                                        
                                                                     </div>
-                                                          </div></div></div>
+                                                          </div>
+                                                          </div>
 																																							                                                                                                                             
                                                                 <!-- 검색창 -->
 																<div class="card">
@@ -152,20 +159,26 @@
 																									
 										                       <!-- 검색결과 -->
                                                                 <div class="card">
-                                                                	<div class="card-header">
-                                                                        <h5>검색결과</h5>                                                                       
-                                                                        <table border="1" width="1100px">
-                                                                        	<tr>
-																				<th>출발요일</th>
-																				<th>항공편</th>
-																				<th>출발시간</th>
-																				<th>운항 시작일</th>
-																				<th>운항 종료일</th>
-																				<th>항공사</th>
-																				<th>목적지</th>
-																			</tr>
-																			     <c:forEach var="flightList" items="${ flightList }">   
-																			     <tr>                                                                	
+                                        <div class="card-header">
+                                            <h5>검색결과</h5>
+                                        </div>
+                                        <div class="card-block table-border-style">
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>출발요일</th>
+															<th>항공편</th>
+															<th>출발시간</th>
+															<th>운항 시작일</th>
+															<th>운항 종료일</th>
+															<th>항공사</th>
+															<th>목적지</th>
+                                                        </tr>
+                                                    </thead>
+													<c:forEach var="flightList" items="${ flightList }"> 
+                                                    <tbody>
+                                                        <th scope="row">1</th>                                      	
 																				<th>${ flightList.day }</th>
 																				<th>${ flightList.flight }</th>
 																				<th>${ flightList.time }</th>
@@ -173,12 +186,13 @@
 																				<th>${ flightList.date_to }</th>
 																				<th>${ flightList.airline }</th>
 																				<th>${ flightList.destination }</th>
-																			</tr>
-																		     </c:forEach>
-																			
-                                                                        </table>                                                                     
-                                                                    </div>
-                                                                </div>
+                                                        </tr>
+                                                     </c:forEach> 
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div></div>
                                                                  </div></div></div></div></div></div></div></div>  
 																
 

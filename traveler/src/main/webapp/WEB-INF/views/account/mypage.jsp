@@ -109,22 +109,20 @@
 					 </div>
 					 <div class="card-body">
 					     <div class="table-responsive">
-			                   <table>
-			                   	<tbody>
-			                   	<tr>
+							<table class="table table-hover" id="dataTable">
+                                <tr>
 			                   		<th>ID</th>
 			                   		<td>${ loginuser.memberID }</td>
 			                   	</tr>
-			                   	<tr>
+                                <tr>
 			                   		<th>이메일</th>
 			                   		<td>${ loginuser.email }</td>
 			                   	</tr>
-			                   	<tr>
+                                <tr>
 			                   		<th>가입일자</th>
 			                   		<td>${ loginuser.regDate }</td>
 			                   	</tr>
-			                   	</tbody>
-			                   </table>
+							</table>
 							</div>
 						</div>
 					</div>

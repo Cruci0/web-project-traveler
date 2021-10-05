@@ -112,26 +112,22 @@
 					 </div>
 					 <div class="card-body">
 					     <div class="table-responsive">
-					     
-							<table>
-								<tbody>
-								<tr>
-									<th>ID</th>
-									<td>${ loginuser.memberID }</td>
-								</tr>
-								<tr>
-									<th>이메일</th>
-									<td><input class="form-control" id='email' name='email' value='${ loginuser.email }'></td>
-								</tr>
-								<tr>
-									<th>가입일자</th>
-									<td>${ loginuser.regDate }</td>
-								</tr>
-								</tbody>
+							<table class="table table-hover" id="dataTable">
+                                <tr>
+			                   		<th>ID</th>
+			                   		<td>${ loginuser.memberID }</td>
+			                   	</tr>
+                                <tr>
+			                   		<th>이메일</th>
+			                   		<td><input class="form-control" id='email' name='email' value='${ loginuser.email }'></td>
+			                   	</tr>
+                                <tr>
+			                   		<th>가입일자</th>
+			                   		<td>${ loginuser.regDate }</td>
+			                   	</tr>
 							</table>
-						
 						</div>
-						</div>
+					</div>
 					</form>
 					</div>
            		</div>

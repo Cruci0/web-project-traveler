@@ -111,18 +111,25 @@
                                                                  <div class="form-group row">
                                                                     <label class="col-sm-2 col-form-label">항공사</label> 
                                                                     <select id="airline" name="airline">
+                                                                    <c:if test="${ empty airlines }">
+                                                                    <option value="">목적지를 선택하면 목록이 표시됩니다</option>
+                                                                    </c:if>
 																	<c:forEach var="airline" items="${ airlines }">
+																		
 																		<option value="${ airline }"
 																			${ selectedAirline == airline ? "selected" : "" }>${ airline }</option>
 																	</c:forEach>
 																</select>
                                                                 </div>    
                                                                     <div class="form-group row">
-                                                                        <label class="col-sm-2 col-form-label">출발 월</label> 
+                                                                        <label class="col-sm-2 col-form-label">출발 월</label>
                                                                         <select id=date_from name="date_from">
+                                                                        <c:if test="${ empty dateFrom }">
+                                                                        <option value="">항공사를 선택하면 목록이 표시됩니다</option>
+                                                                        </c:if>	
 																	<c:forEach var="date_from" items="${ dateFrom }">
-																		<option value="${ date_from }"
-																			${ selectedDateFrom == date_from ? "selected" : "" } >${ date_from }</option>
+																	   <option value="${ date_from }"
+																			${ selectedDateFrom == date_from ? "selected" : "" }>${ date_from }</option>
 																	</c:forEach>
 																</select>
                                                                         </div>
@@ -169,7 +176,7 @@
 																</script>		 -->																										
 										                       <!-- 검색결과 -->
                                                                  <!-- Bar Chart start -->
-											<div class="col-md-12 col-lg-6">
+											<div class="col-md-12 col-lg-12">
 												<div class="card">
 													<div class="card-header">
 														
@@ -192,34 +199,17 @@
 
 <jsp:include page="/WEB-INF/views/modules/common-js.jsp" />
 
-<c:forEach var="dailyCount" items="${ dailyCounts }">
+<%-- <c:forEach var="dailyCount" items="${ dailyCounts }">
 	<p>${ dailyCount.day } / ${ dailyCount.dailyCount }</p>		
-</c:forEach>
+</c:forEach> --%>
 
-<script type="text/javascript">
-	var data= {
-			<c:forEach var="dailyCount" items="${ dailyCounts }">
-			<p>${ dailyCount.day } / ${ dailyCount.dailyCount }</p>		
-			</c:forEach>
-			
-	}
-	$(function(){
-			
-		
-		
-	})
-	/* var dailyCount=${ dailyCounts }; 
-		
-	dailyCount.forEach(function(dailyCounts){
-		console.log('${ dailyCounts}');
-		
-	}); */
 
-</script>
+
+
 
 <script type="text/javascript">
 	$(function() {
-			
+		
 		$('#airline').on('change',function(event) {
 			var destination = $('#destination').val();
 			location.href = "graph?destination=" + destination + "&airline="+ $(this).val();
@@ -228,6 +218,7 @@
 		// destination 선택을 변경하는 경우 서버로 요청 전송
 		$('#destination').on('change',function(event) {
 			location.href = "graph?destination="+ $(this).val();
+			
 		});
 		
 		$('#search-button').on('click', function(event) {
